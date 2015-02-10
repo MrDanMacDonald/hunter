@@ -1,0 +1,27 @@
+<div class="well bs-component">
+    <div class="form-horizontal">
+        <fieldset>
+            <%= form_for(:session, url: login_path) do |f| %>
+                <legend>Log In</legend>
+                <div class="form-group">
+                    <%= f.label :email, class: "col-lg-2 control-label" %>
+                    <div class="col-lg-10">
+                        <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <%= f.label :password, class: "col-lg-2 control-label" %>
+                    <div class="col-lg-10">
+                        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                    <%= f.submit "Log in", class: "btn btn-primary" %>
+                    </div>
+                </div>
+            <% end %>
+            <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+        </fieldset>
+    </div>
+</div>
