@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_many(:posts) }
+
+  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:email) }
+
+  it { should respond_to(:name) }
+  it { should respond_to(:email) }
 end
