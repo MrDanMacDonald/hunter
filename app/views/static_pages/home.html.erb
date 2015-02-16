@@ -1,5 +1,6 @@
 <% if logged_in? %>
-  <%= link_to 'Post new', new_post_path, data: {toggle: 'modal', target: '#new-post-modal'} %>
+  <!-- Here I'm not using a path, as I want to bypass the NEW action in the posts controller -->
+  <%= link_to 'Post new', '#', data: {toggle: 'modal', target: '#new-post-modal'} %>
   <!-- Hidden Bootstrap Modal Markup -->
   <div class="modal fade" id="new-post-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">

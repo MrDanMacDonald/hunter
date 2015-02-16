@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   respond_to :html, :js
 
   def index
+    @posts = Post.all
   end
 
   def new
