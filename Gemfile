@@ -1,5 +1,6 @@
 gem 'rails', '4.1.5'
 gem 'pg'
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'turbolinks'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'

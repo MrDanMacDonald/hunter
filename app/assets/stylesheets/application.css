@@ -14,6 +14,7 @@
  *= require bootstrap_and_overrides
  *= require twitter-bootstrap-static/bootstrap
  *= require bootstrap-material-design
+ *= require custom
  *= require_tree.
  */
 

@@ -1,0 +1,23 @@
+<div class="well bs-component">
+  <div class="list-group">
+    <% @posts.each do |post| %>
+        <div class="list-group-item">
+          <div class="row-action-primary">
+            <%= link_to like_post_path(post), method: :put, class: "btn btn-warning mdi-navigation-arrow-drop-up" do %>
+            <p><%= post.get_upvotes.size %></p>
+            <% end %>
+          </div>
+          <div class="row-content">
+            <!-- link to user profile -->
+            <div class="least-content">
+              <%= link_to post.name_of_user, user_path(post.user) %>
+            </div>
+            <!-- link to post show -->
+            <h4 class="list-group-item-heading"><%= post.name %></h4>
+            <p class="list-group-item-text"><%= post.description %></p>
+          </div>
+        </div>
+        <div class="list-group-separator"></div>
+    <% end %>
+  </div>
+</div>
