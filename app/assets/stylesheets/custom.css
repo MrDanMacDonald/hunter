@@ -1,10 +1,19 @@
 /*Upvote button*/
-
-.btn.btn-warning.mdi-navigation-arrow-drop-up{
+.btn.btn-warning.mdi-navigation-arrow-drop-up {
   padding: 8px 15px;
   display: inline-block;
 }
 
-.mdi-navigation-arrow-drop-up::before{
+.mdi-navigation-arrow-drop-up::before {
   font-size: 2em;
+}
+
+/*Table header*/
+.table>thead>tr>th {
+  border: 0px;
+}
+
+/*Table body*/
+.table>tbody>tr>td {
+  border: 0px;
 }
