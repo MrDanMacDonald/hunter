@@ -8,11 +8,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   require 'acts_as_votable'
-
-  # def get_upvotes
-  #   Post.votes_for.size
-  # end
-
+  
   def name_of_user
     user.name
   end

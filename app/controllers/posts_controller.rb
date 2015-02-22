@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   respond_to :html, :js
 
   def index
+    @date = Time.now
     @posts = Post.all
   end
 
@@ -23,6 +24,10 @@ class PostsController < ApplicationController
     else
       render 'static_pages/home'
     end
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   def destroy

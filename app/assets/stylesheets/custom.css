@@ -1,10 +1,66 @@
-/*Upvote button*/
+/*Upvote button on posts#INDEX */
 
-.btn.btn-warning.mdi-navigation-arrow-drop-up{
-  padding: 8px 15px;
+.btn.btn-warning.mdi-navigation-arrow-drop-up {
+  padding: 1px 1px;
   display: inline-block;
 }
 
-.mdi-navigation-arrow-drop-up::before{
-  font-size: 2em;
+.mdi-navigation-arrow-drop-up::before {
+  font-size: 3em;
+}
+
+/*Table header*/
+.table>thead>tr>th {
+  border: 0px;
+}
+
+.present-date {
+  display: inline;
+}
+
+/*Table body*/
+.table>tbody>tr>td {
+  border: 0px;
+}
+
+.post-item-info {
+  margin: 10px;
+}
+
+/*posts#SHOW */
+
+#large-button {
+  padding: 10px 10px;
+  display: inline-block;
+}
+
+#post-name>h2 {
+  margin-top: 0px;
+}
+
+.user-photo-container {
+  display: inline-block;
+  padding-right: 16px;
+}
+
+.user-info-container {
+  display: inline-block;
+}
+
+.user-photo {
+  border-radius: 100%;
+  width: 56px;
+  height: 56px;
+}
+
+.user-name {
+  display: inline-block;
+}
+
+.social-share-button {
+  margin-top: 12px;
+}
+
+.number-of-upvotes {
+  margin-top: 17px;
 }
