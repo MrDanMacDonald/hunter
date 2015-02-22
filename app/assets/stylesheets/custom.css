@@ -52,3 +52,15 @@
   width: 56px;
   height: 56px;
 }
+
+.user-name {
+  display: inline-block;
+}
+
+.social-share-button {
+  margin-top: 12px;
+}
+
+.number-of-upvotes {
+  margin-top: 17px;
+}
