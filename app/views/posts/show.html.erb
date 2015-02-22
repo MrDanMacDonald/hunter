@@ -1,16 +1,25 @@
 <div class="well bs-component">
   <div class="row">
-  <div class="col-md-1">
-    <%= link_to like_post_path(@post), method: :put, class: "btn btn-warning mdi-navigation-arrow-drop-up", id: "large-button" do %>
-    <p><%= @post.get_upvotes.size %></p>
-    <% end %>
+    <div class="col-md-1">
+      <%= link_to like_post_path(@post), method: :put, class: "btn btn-warning mdi-navigation-arrow-drop-up", id: "large-button" do %>
+      <p><%= @post.get_upvotes.size %></p>
+      <% end %>
+    </div>
+    <div class="col-md-11">
+      <span id="post-name">
+        <h2><%= @post.name %></h2>
+      </span>
+      <h3><%= @post.description %></h3>
+      <h4><a href="<%= @post.url %>" target="_blank"><%= @post.url %></a></h4>
+    </div>
   </div>
-  <div class="col-md-11">
-    <span id="post-name">
-      <h2><%= @post.name %></h2>
-    </span>
-    <h3><%= @post.description %></h3>
-    <h4><a href="<%= @post.url %>" target="_blank"><%= @post.url %></a></h4>
-  </div>
+  <hr>
+  <div>
+    <div class="user-photo-container">
+      <img class="user-photo" src="https://pbs.twimg.com/profile_images/485866025884188673/mm_ifWVp.jpeg" alt="icon">
+    </div>
+    <div class="user-info-container">
+      <%= link_to @post.name_of_user, user_path(@post.user) %>
+    </div>
   </div>
 </div>

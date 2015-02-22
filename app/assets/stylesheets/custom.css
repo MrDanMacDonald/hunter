@@ -37,3 +37,18 @@
 #post-name>h2 {
   margin-top: 0px;
 }
+
+.user-photo-container {
+  display: inline-block;
+  padding-right: 16px;
+}
+
+.user-info-container {
+  display: inline-block;
+}
+
+.user-photo {
+  border-radius: 100%;
+  width: 56px;
+  height: 56px;
+}
