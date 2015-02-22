@@ -1,4 +1,5 @@
-/*Upvote button*/
+/*Upvote button on posts#INDEX */
+
 .btn.btn-warning.mdi-navigation-arrow-drop-up {
   padding: 1px 1px;
   display: inline-block;
@@ -24,4 +25,15 @@
 
 .post-item-info {
   margin: 10px;
+}
+
+/*posts#SHOW */
+
+#large-button {
+  padding: 10px 10px;
+  display: inline-block;
+}
+
+#post-name>h2 {
+  margin-top: 0px;
 }
