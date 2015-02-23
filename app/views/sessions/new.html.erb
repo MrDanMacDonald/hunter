@@ -3,6 +3,7 @@
         <fieldset>
             <%= form_for(:session, url: login_path) do |f| %>
                 <legend>Log In</legend>
+                <%= render 'shared/error_messages' %>
                 <div class="form-group">
                     <%= f.label :email, class: "col-lg-2 control-label" %>
                     <div class="col-lg-10">

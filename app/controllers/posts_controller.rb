@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = 'Post submitted!'
-      redirect_to root_url
+      redirect_to posts_path
     else
       render 'static_pages/home'
     end
@@ -28,6 +28,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @commentable = @post
+    @comment = @commentable.comments.new
   end
 
   def destroy
