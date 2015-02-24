@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   def create
     @commentable = Post.find(params[:post_id])
     @comment = @commentable.comments.new(comment_params)
+    @comment.user = current_user
     if @comment.save
       flash[:success] = 'Comment created!'
       redirect_to @commentable

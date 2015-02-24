@@ -46,10 +46,30 @@
   <hr>
 
 <!--   Comments -->
-  <h2>Comments</h2>
+  <h2><%= pluralize(@comments.count, "Comment")%></h2>
+  <div class="list-group">
+    <% @comments.each do |comment| %>
+      <div class="list-group-item">
+        <div class="row-picture">
+          <img class="user-photo" src="https://pbs.twimg.com/profile_images/485866025884188673/mm_ifWVp.jpeg" alt="icon">
+        </div>
+        <div class="row-content">
+          <h4 class="list-group-item-heading">
+            <strong>
+              <%= link_to comment.commenter_name, user_path(comment.user) %>
+            </strong>
+          </h4>
+          <h4 class="list-group-item-text">
+            <%= comment.content %>
+          </h4>
+        </div>
+      </div>
+      <div class="list-group-separator"></div>
+    <% end %>
+  </div>
   <div class="row">
-    <div class="col-md-6">
-    <%= render 'comments/form', locals: { comment: @comment, commentable: @commentable } %>
+    <div class="col-md-12">
+      <%= render 'comments/form', locals: { comment: @comment, commentable: @commentable } %>
     </div>
   </div>
 </div>

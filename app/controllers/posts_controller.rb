@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user, only: [:create, :upvote, :destroy]
   respond_to :html, :js
 
   def index
@@ -29,7 +29,8 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @commentable = @post
-    @comment = @commentable.comments.new
+    @comments = @post.comments
+    @comment = Comment.new
   end
 
   def destroy
