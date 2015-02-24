@@ -62,6 +62,7 @@
           <h4 class="list-group-item-text">
             <%= comment.content %>
           </h4>
+          <%= link_to "Reply", reply_post_path, method: :put, remote: true %>
         </div>
       </div>
       <div class="list-group-separator"></div>

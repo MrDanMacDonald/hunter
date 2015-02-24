@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :comments
     member do
       put 'like', to: 'posts#upvote'
+      put 'reply', to: 'comments#reply'
     end
   end
 

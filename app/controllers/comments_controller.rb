@@ -1,5 +1,12 @@
 class CommentsController < ApplicationController
+  before_action :logged_in_user, only: [:reply, :create]
+  respond_to :html, :js
+
   def index
+  end
+
+  def reply
+    binding.pry
   end
 
   def create
