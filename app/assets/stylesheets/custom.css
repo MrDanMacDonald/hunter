@@ -1,3 +1,9 @@
+/*Floating action button*/
+
+.btn-fab {
+  float: right;
+}
+
 /*Upvote button on posts#INDEX */
 
 .btn.btn-warning.mdi-navigation-arrow-drop-up {
