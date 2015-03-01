@@ -1,6 +1,6 @@
 /*Floating action button*/
 
-.btn-fab {
+.button-right {
   float: right;
 }
 
@@ -33,6 +33,16 @@
   margin: 10px;
 }
 
+/*users#SHOW */
+.list-group .list-group-item .row-picture .profile-photo img {
+  width: 125px;
+  height: 125px;
+}
+
+.list-group .list-group-item .row-content {
+  display: inline;
+}
+
 /*posts#SHOW */
 
 #large-button {
@@ -42,6 +52,11 @@
 
 #post-name>h2 {
   margin-top: 0px;
+}
+
+#edit-user-profile {
+/*  width: 60%;*/
+/*  float: right;*/
 }
 
 .user-photo-container {
