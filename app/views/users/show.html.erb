@@ -10,4 +10,30 @@
         </div>
     </div>
   </div>
+  <table class="table table-hover">
+      <thead>
+        <th class="col-md-1"></th>
+        <th class="col-md-9"></th>
+        <th class="col-md-2"></th>
+      </thead>
+      <tbody>
+        <% @upvotedPosts.each do |post| %>
+            <tr data-link="<%= post_path(post) %>">
+                <td>
+                  <%= link_to like_post_path(post), method: :put, class: "btn btn-warning mdi-navigation-arrow-drop-up" do %>
+                  <p><%= post.get_upvotes.size %></p>
+                  <% end %>
+                </td>
+                <td>
+                  <div class="post-item-info">
+                    <h4 class="list-group-item-heading"><a href="<%= post.url %>" target="_blank"><%= post.name %></a></h4>
+                    <p class="list-group-item-text"><%= post.description %></p>
+                  </div>
+                </td>
+                <td>
+                </td>
+            </tr>
+        <% end %>
+      </tbody>
+  </table>
 </div>

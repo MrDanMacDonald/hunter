@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
 
+  acts_as_voter
+
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
