@@ -17,6 +17,7 @@ gem 'bootstrap-material-design'
 gem 'draper'
 gem 'shareable'
 gem 'bcrypt'
+gem 'closure_tree'
 
 group :development do
   gem 'better_errors'

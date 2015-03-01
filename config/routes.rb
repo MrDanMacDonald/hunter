@@ -8,10 +8,10 @@ Rails.application.routes.draw do
 
   resources :users
   resources :posts do 
-    resources :comments
+    resources :comments, only: [:index, :create]
+    get '/comments/new/(:parent_id)', to: 'comments#new', as: :new_comment
     member do
       put 'like', to: 'posts#upvote'
-      put 'reply', to: 'comments#reply'
     end
   end
 

@@ -40,7 +40,7 @@
     <div class="col-md-2">
       <div class="social-share-button">
         <%= twitter_button %>
-      </div> 
+      </div>  
     </div>
   </div>
   <hr>
@@ -62,7 +62,7 @@
           <h4 class="list-group-item-text">
             <%= comment.content %>
           </h4>
-          <%= link_to "Reply", reply_post_path, method: :put, remote: true %>
+          <%= link_to "Reply", comments_new_path(parent_id: comment.id, commentable: @post), remote: true, id: 'reply-link' %>
         </div>
       </div>
       <div class="list-group-separator"></div>
@@ -70,7 +70,7 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <%= render 'comments/form', locals: { comment: @comment, commentable: @commentable } %>
+      <%= render 'comments/form', comment: @comment, commentable: @commentable, parent: @parent %>
     </div>
   </div>
 </div>
