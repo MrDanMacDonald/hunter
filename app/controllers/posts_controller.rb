@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :upvote, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :upvote, :destroy]
   respond_to :html, :js
 
   def index
     @date = Time.now
     @posts = Post.all
+    @post = current_user.posts.build if logged_in?
   end
 
   def upvote
