@@ -7,9 +7,6 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def new
-  end
-
   def upvote
     @post = Post.find(params[:id])
     @post.upvote_by current_user
@@ -29,7 +26,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @commentable = @post
-    @comments = @post.comments
+    @comments = @post.comments.hash_tree
     @comment = Comment.new
   end
 

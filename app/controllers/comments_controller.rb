@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
   end
 
   def new
-    binding.pry
     @comment = Comment.new
     @parent = Comment.find(params[:parent_id]) if params[:parent_id]
     @commentable = Post.find(params[:commentable])
@@ -33,6 +32,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content, :parent_id)
+    params.require(:comment).permit(:content)
   end
 end

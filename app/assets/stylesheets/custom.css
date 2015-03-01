@@ -68,3 +68,7 @@
 .right {
   float: right;
 }
+
+.replies {
+  margin-left: 50px;
+}
