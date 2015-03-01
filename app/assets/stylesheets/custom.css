@@ -64,3 +64,11 @@
 .number-of-upvotes {
   margin-top: 17px;
 }
+
+.right {
+  float: right;
+}
+
+.replies {
+  margin-left: 50px;
+}

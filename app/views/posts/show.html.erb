@@ -14,11 +14,11 @@
       <h4><a href="<%= @post.url %>" target="_blank"><%= @post.url %></a></h4>
     </div>
   </div>
-
   <hr>
+
   <!-- User info -->
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="user-photo-container">
         <img class="user-photo" src="https://pbs.twimg.com/profile_images/485866025884188673/mm_ifWVp.jpeg" alt="icon">
       </div>
@@ -27,7 +27,7 @@
         <%= link_to @post.name_of_user, user_path(@post.user) %>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-5">
       <div class="number-of-upvotes">
         <span><%= @post.get_upvotes.size %> Upvotes</span>
       </div>
@@ -40,7 +40,19 @@
     <div class="col-md-2">
       <div class="social-share-button">
         <%= twitter_button %>
-      </div> 
+      </div>  
+    </div>
+  </div>
+  <hr>
+
+<!--   Comments -->
+  <h2><%= pluralize(@comments.count, "Comment")%></h2>
+  <div class="list-group">
+    <%= comments_tree_for @comments %>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <%= render 'comments/form', comment: @comment, commentable: @commentable, parent: @parent %>
     </div>
   </div>
 </div>

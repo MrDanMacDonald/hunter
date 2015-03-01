@@ -1,13 +1,10 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user, only: [:create, :upvote, :destroy]
   respond_to :html, :js
 
   def index
     @date = Time.now
     @posts = Post.all
-  end
-
-  def new
   end
 
   def upvote
@@ -20,7 +17,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = 'Post submitted!'
-      redirect_to root_url
+      redirect_to posts_path
     else
       render 'static_pages/home'
     end
@@ -28,6 +25,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @commentable = @post
+    @comments = @post.comments.hash_tree
+    @comment = Comment.new
   end
 
   def destroy
