@@ -1,9 +1,3 @@
-/*Floating action button*/
-
-.button-right {
-  float: right;
-}
-
 /*Upvote button on posts#INDEX */
 
 .btn.btn-warning.mdi-navigation-arrow-drop-up {
@@ -92,4 +86,43 @@
 
 .replies {
   margin-left: 50px;
+}
+
+/*Navbar and FAB*/
+
+.navbar {
+  margin-bottom: 40px;
+  background-color: #607D8B;
+}
+
+.theme-status {
+  background-color: #455A64;
+  height: 25px;
+}
+
+#fab-container {
+  position: relative;
+}
+#add-post {
+  position: absolute;
+  right: 0;
+  bottom: -26px;
+
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+
+  overflow:hidden;
+}
+
+#add-post:hover {
+  -webkit-transform:scale(1.2) rotate(90deg);
+  -moz-transform:scale(1.2) rotate(90deg);
+  -o-transform:scale(1.2) rotate(90deg);
 }

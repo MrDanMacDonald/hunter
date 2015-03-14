@@ -1,3 +1,6 @@
+source 'https://rubygems.org'
+ruby '2.1.5'
+
 gem 'rails', '4.1.5'
 gem 'pg'
 gem 'acts_as_votable', '~> 0.10.0'
@@ -37,7 +40,7 @@ group :test do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '3.0.0.beta2'
+  gem 'rspec-rails'
   gem 'shoulda-matchers', '2.5.0'
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'letter_opener'

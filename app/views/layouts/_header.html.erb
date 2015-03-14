@@ -1,4 +1,6 @@
 <div class='navbar navbar-default'>
+  <div class='theme-status'>
+  </div>
   <div class='container'>
     <div class='navbar-header'>
       <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-responsive-collapse'>
@@ -23,5 +25,16 @@
         <% end %>
       </ul>
     </div>
+  </div>
+  <div class='container' id='fab-container'>
+    <div class='navbar-collapse collapse navbar-responsive-collapse'>
+      <ul class='nav navbar-nav navbar-left'>
+        <li><%= link_to 'Link', '#' %></li>
+        <li><%= link_to 'Link', '#' %></li>
+      </ul>
+    </div>
+      <% if logged_in? %>
+        <%= link_to '', '#', data: {toggle: 'modal', target: '#new-post-modal'}, class: "btn btn-warning btn-fab btn-raised mdi-content-add", id: "add-post" %>
+      <% end %>
   </div>
 </div>
