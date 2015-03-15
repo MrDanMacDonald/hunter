@@ -20,7 +20,14 @@
   <div class="row">
     <div class="col-md-4">
       <div class="user-photo-container">
-        <img class="user-photo" src="https://pbs.twimg.com/profile_images/485866025884188673/mm_ifWVp.jpeg" alt="icon">
+  <!--    TODO: Replace default image with a placeholder avatar -->
+          <div class="profile-photo">
+            <% if @post.user_photo %>
+              <%= image_tag @post.user_photo, class: "user-photo-small" %>
+            <% else %>
+              <img class="user-photo-small" src="https://pbs.twimg.com/profile_images/485866025884188673/mm_ifWVp.jpeg" alt="icon">
+            <% end %>
+          </div>
       </div>
       <div class="user-info-container">
         <span>Posted <%= time_ago_in_words(@post.created_at) %> ago by </span>

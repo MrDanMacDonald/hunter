@@ -1,6 +1,12 @@
 <div class="list-group-item">
-  <div class="row-picture">
-    <img class="user-photo" src="https://pbs.twimg.com/profile_images/485866025884188673/mm_ifWVp.jpeg" alt="icon">
+  <div class="user-photo-container">
+<!-- TODO: Replace default image with a placeholder avatar -->
+  <div class="profile-photo">
+    <% if comment.commenter_photo %>
+      <%= image_tag comment.commenter_photo, class: "user-photo-small" %>
+    <% else %>
+      <img class="user-photo-small" src="https://pbs.twimg.com/profile_images/485866025884188673/mm_ifWVp.jpeg" alt="icon">
+    <% end %>
   </div>
   <div class="row-content">
     <h4 class="list-group-item-heading">
