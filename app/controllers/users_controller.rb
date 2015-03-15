@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @upvotedPosts = @user.find_up_voted_items
+    @post = @user.posts.new
   end
 
   def new
