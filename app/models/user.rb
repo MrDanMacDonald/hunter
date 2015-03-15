@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, length: { minimum: 6 }
 
+  mount_uploader :photo, PhotoUploader
+
   has_many :posts
   has_many :comments
 
