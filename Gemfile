@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 ruby '2.1.5'
-
 gem 'rails', '4.1.5'
 gem 'pg'
 gem 'acts_as_votable', '~> 0.10.0'
@@ -22,6 +21,7 @@ gem 'shareable'
 gem 'bcrypt'
 gem 'closure_tree'
 gem 'carrierwave'
+gem 'omniauth-twitter'
 
 group :development do
   gem 'better_errors'
