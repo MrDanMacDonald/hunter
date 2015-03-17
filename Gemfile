@@ -21,6 +21,7 @@ gem 'draper'
 gem 'shareable'
 gem 'bcrypt'
 gem 'closure_tree'
+gem 'carrierwave'
 
 group :development do
   gem 'better_errors'

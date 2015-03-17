@@ -11,4 +11,8 @@ class Comment < ActiveRecord::Base
   def commenter_name
     user.name
   end
+
+  def commenter_photo
+    user.photo_url.to_s
+  end
 end

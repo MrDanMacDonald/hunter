@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @upvotedPosts = @user.find_up_voted_items
+    @post = @user.posts.new
   end
 
   def new
@@ -39,6 +40,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :photo, :password, :password_confirmation)
   end
 end
