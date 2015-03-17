@@ -16,4 +16,8 @@ class Post < ActiveRecord::Base
   def user_photo
     user.photo_url.to_s
   end
+
+  def voters
+    get_upvotes.map { |vote| User.find(vote.voter_id) }
+  end
 end
