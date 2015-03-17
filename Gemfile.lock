@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     actionmailer (4.1.5)
       actionpack (= 4.1.5)
@@ -318,7 +319,7 @@ DEPENDENCIES
   pry
   quiet_assets
   rails (= 4.1.5)
-  rspec-rails (= 3.0.0.beta2)
+  rspec-rails
   rubocop
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
