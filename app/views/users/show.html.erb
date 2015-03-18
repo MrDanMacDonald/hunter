@@ -4,10 +4,8 @@
         <div class="row-picture">
 <!--      TODO: Replace default image with a placeholder avatar -->
           <div class="profile-photo">
-            <% if @user.photo_url %>
-              <%= image_tag @user.photo_url.to_s, class: "circle" %>
-            <% else %>
-              <img class="circle" src="https://pbs.twimg.com/profile_images/485866025884188673/mm_ifWVp.jpeg" alt="icon">
+            <% if @user.photo %>
+              <%= image_tag @user.photo.to_s, class: "circle" %>
             <% end %>
           </div>
         </div>

@@ -39,7 +39,7 @@
         <span><%= @post.get_upvotes.size %> Upvotes</span>
         <% @post.voters.each do |voter| %>
           <ul class="no-bullets">
-            <li><%= image_tag voter.photo_url, class: "user-photo-x-small" %></li>
+            <li><%= image_tag voter.photo, class: "user-photo-x-small" %></li>
           </ul>
         <% end %>
       </div>

@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
   end
 
   def user_photo
-    user.photo_url.to_s
+    user.photo.to_s
   end
 
   def voters
