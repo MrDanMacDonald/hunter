@@ -28,8 +28,6 @@
         <li><%= link_to 'Link', '#' %></li>
       </ul>
     </div>
-      <% if logged_in? %>
-        <%= link_to '', '#', data: { toggle: 'modal', target: '#new-post-modal' }, class: "btn btn-warning btn-fab btn-raised mdi-content-add", id: "add-post" %>
-      <% end %>
+    <%= link_to '', '#', data: { toggle: 'modal', target: '#new-post-modal' }, class: "btn btn-warning btn-fab btn-raised mdi-content-add", id: "add-post" %>
   </div>
 </div>
