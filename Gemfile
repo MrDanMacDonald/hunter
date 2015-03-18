@@ -20,7 +20,6 @@ gem 'draper'
 gem 'shareable'
 gem 'bcrypt'
 gem 'closure_tree'
-gem 'carrierwave'
 gem 'omniauth-twitter'
 
 group :development do

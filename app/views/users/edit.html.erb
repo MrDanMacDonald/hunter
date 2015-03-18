@@ -1,46 +1,28 @@
 <div class="well bs-component">
   <div class="form-horizontal" id="edit-user-profile">
-      <fieldset>
-        <%= form_for(@user) do |f| %>
-          <%= render 'shared/error_messages' %>
-          <legend>Update Your Profile</legend>
-          <div class="form-group">
-            <%= f.label :photo, class: "col-lg-2 control-label" %>
-            <div class="col-lg-10">
-              <%= f.file_field :photo, class: "form-control", placeholder: "Browse..." %>
-            </div>
+    <fieldset>
+      <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages' %>
+        <legend>Manage Settings</legend>
+        <div class="form-group">
+          <%= f.label :email, class: "col-lg-2 control-label" %>
+          <div class="col-lg-10">
+            <%= f.email_field :email, class: "form-control", placeholder: 'Email' %>
           </div>
-          <div class="form-group">
-            <%= f.label :name, class: "col-lg-2 control-label" %>
-            <div class="col-lg-10">
-              <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
-            </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :title, class: "col-lg-2 control-label" %>
+          <div class="col-lg-10">
+            <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
           </div>
-          <div class="form-group">
-            <%= f.label :email, class: "col-lg-2 control-label" %>
-            <div class="col-lg-10">
-              <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
-            </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <%= link_to "Cancel", user_path(@user), class: "btn btn-default" %>
+            <%= f.submit "Update my settings", class: "btn btn-primary btn-raised button-right" %>
           </div>
-          <div class="form-group">
-            <%= f.label :password, class: "col-lg-2 control-label" %>
-            <div class="col-lg-10">
-              <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
-            </div>
-          </div>
-          <div class="form-group">
-            <%= f.label :password_confirmation, class: "col-lg-2 control-label" %>
-            <div class="col-lg-10">
-              <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirmation" %>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-lg-10 col-lg-offset-2">
-              <%= link_to "Cancel", user_path(@user), class: "btn btn-default" %>
-              <%= f.submit "Update my account", class: "btn btn-primary btn-raised button-right" %>
-            </div>
-          </div>
-        <% end %>
-      </fieldset>
+        </div>
+      <% end %>
+    </fieldset>
   </div>
 </div>

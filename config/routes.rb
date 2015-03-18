@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
+  root'posts#index'
+
   get 'comments/index'
 
   get 'comments/new'
-
-  root 'static_pages#home'
 
   resources :users
   resources :posts do 

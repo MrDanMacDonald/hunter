@@ -21,6 +21,10 @@ module SessionsHelper
     end
   end
 
+  def store_location
+    session[:return_to] = request.fullpath
+  end
+
   def logged_in?
     !current_user.nil?
   end

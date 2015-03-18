@@ -13,6 +13,6 @@ class Comment < ActiveRecord::Base
   end
 
   def commenter_photo
-    user.photo_url.to_s
+    user.photo_url
   end
 end

@@ -5,7 +5,11 @@ class PostsController < ApplicationController
   def index
     @date = Time.now
     @posts = Post.all
-    @post = current_user.posts.build if logged_in?
+    if logged_in?
+      @post = current_user.posts.build
+    else
+      @post = Post.new
+    end
   end
 
   def upvote
