@@ -31,3 +31,18 @@
     <%= link_to '', '#', data: { toggle: 'modal', target: '#new-post-modal' }, class: "btn btn-warning btn-fab btn-raised mdi-content-add", id: "add-post" %>
   </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function(){       
+  var scroll_pos = 0;
+  $(document).scroll(function() { 
+      scroll_pos = $(this).scrollTop();
+      console.log('scroll_pos: ', scroll_pos)
+      if(scroll_pos > 45) {
+        $(".navbar-default, .navbar-brand").addClass('pastNavbarBottom');
+      } else {
+        $(".navbar-default, .navbar-brand").removeClass('pastNavbarBottom');
+      }
+  });
+});
+
+</script>

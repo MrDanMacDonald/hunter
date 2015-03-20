@@ -105,6 +105,7 @@ body {
 .navbar {
   margin-bottom: 40px;
   background-color: #607D8B;
+  transition-duration: 0.25s;
 }
 
 .theme-status {
@@ -114,6 +115,14 @@ body {
 
 .navbar-nav>li:hover {
   background-color: #78909C;
+}
+
+.pastNavbarBottom.navbar-default {
+  background-color: transparent;
+}
+
+.pastNavbarBottom.navbar-brand {
+  color: red;
 }
 
 #fab-container {
