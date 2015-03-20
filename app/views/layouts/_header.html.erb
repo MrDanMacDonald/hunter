@@ -13,8 +13,8 @@
     <div class='navbar-collapse collapse navbar-responsive-collapse'>
       <ul class='nav navbar-nav navbar-right'>
         <% if logged_in? %>
-          <li><%= link_to 'Profile', current_user %></li>
-          <li><%= link_to 'Log out', logout_path %></li>
+          <li><%= link_to 'Profile', current_user, class: 'navbar-text' %></li>
+          <li><%= link_to 'Log out', logout_path, class: 'navbar-text' %></li>
         <% else %>
           <li><%= link_to 'Sign in with Twitter', "/auth/twitter" %></li>
         <% end %>
@@ -22,27 +22,20 @@
     </div>
   </div>
   <div class='container' id='fab-container'>
-    <div class='navbar-collapse collapse navbar-responsive-collapse'>
-      <ul class='nav navbar-nav navbar-left'>
-        <li><%= link_to 'Link', '#' %></li>
-        <li><%= link_to 'Link', '#' %></li>
-      </ul>
-    </div>
     <%= link_to '', '#', data: { toggle: 'modal', target: '#new-post-modal' }, class: "btn btn-warning btn-fab btn-raised mdi-content-add", id: "add-post" %>
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){       
-  var scroll_pos = 0;
-  $(document).scroll(function() { 
-      scroll_pos = $(this).scrollTop();
-      console.log('scroll_pos: ', scroll_pos)
-      if(scroll_pos > 45) {
-        $(".navbar-default, .navbar-brand").addClass('pastNavbarBottom');
-      } else {
-        $(".navbar-default, .navbar-brand").removeClass('pastNavbarBottom');
-      }
+  $(document).ready(function(){       
+    var scroll_pos = 0;
+    $(document).scroll(function() { 
+        scroll_pos = $(this).scrollTop();
+        console.log('scroll_pos: ', scroll_pos)
+        if(scroll_pos > 45) {
+          $(".navbar-default, .navbar-brand, .navbar-right, .navbar-left, .btn-fab").addClass('pastNavbarBottom');
+        } else {
+          $(".navbar-default, .navbar-brand, .navbar-right, .navbar-left, .btn-fab").removeClass('pastNavbarBottom');
+        }
+    });
   });
-});
-
 </script>

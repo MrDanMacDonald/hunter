@@ -108,6 +108,10 @@ body {
   transition-duration: 0.25s;
 }
 
+.navbar-brand {
+  transition-duration: 0.25s;
+}
+
 .theme-status {
   background-color: #455A64;
   height: 25px;
@@ -125,8 +129,22 @@ body {
   color: red;
 }
 
+.pastNavbarBottom.nav.navbar-nav.navbar-right>li>a {
+  color: red;
+}
+
+.pastNavbarBottom.nav.navbar-nav.navbar-left>li>a {
+  color: red;
+}
+.pastNavbarBottom.btn.btn-warning.btn-fab.btn-raised.mdi-content-add {
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+  -o-transform:rotate(180deg);
+}
+
 #fab-container {
   position: relative;
+  height: 60px;
 }
 
 #add-post {
