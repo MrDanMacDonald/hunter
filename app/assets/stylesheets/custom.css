@@ -121,11 +121,17 @@ body {
   background-color: #78909C;
 }
 
-.pastNavbarBottom.navbar-default {
-  background-color: transparent;
+/*On scroll*/
+
+.pastNavbarBottom#fab-container {
+  height: 0px;
 }
 
-.pastNavbarBottom.navbar-brand {
+.pastNavbarBottom#menu-right{
+  right: 50px;
+}
+
+/*.pastNavbarBottom.navbar-brand {
   color: red;
 }
 
@@ -135,11 +141,20 @@ body {
 
 .pastNavbarBottom.nav.navbar-nav.navbar-left>li>a {
   color: red;
+}*/
+
+.pastNavbarBottom.navbar {
+  box-shadow: 0 2px 5px #9E9E9E;
 }
 .pastNavbarBottom.btn.btn-warning.btn-fab.btn-raised.mdi-content-add {
-  -webkit-transform:rotate(180deg);
-  -moz-transform:rotate(180deg);
-  -o-transform:rotate(180deg);
+  -webkit-transform:rotate(360deg);
+  -moz-transform:rotate(360deg);
+  -o-transform:rotate(360deg);
+}
+
+#menu-right {
+  position: relative;
+  transition-duration: 0.25s;
 }
 
 #fab-container {

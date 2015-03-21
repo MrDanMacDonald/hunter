@@ -1,7 +1,7 @@
 <div class='navbar navbar-default navbar-fixed-top'>
-  <div class='theme-status'>
-  </div>
-  <div class='container'>
+    <div class='theme-status'>
+    </div>
+  <div class='container' id='brand-container'>
     <div class='navbar-header'>
       <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-responsive-collapse'>
         <span class='icon-bar'></span>
@@ -11,17 +11,17 @@
       <%= link_to 'Home', root_path, class: 'navbar-brand' %>
     </div>
     <div class='navbar-collapse collapse navbar-responsive-collapse'>
-      <ul class='nav navbar-nav navbar-right'>
+      <ul class='nav navbar-nav navbar-right' id='menu-right'>
         <% if logged_in? %>
-          <li><%= link_to 'Profile', current_user, class: 'navbar-text' %></li>
-          <li><%= link_to 'Log out', logout_path, class: 'navbar-text' %></li>
+          <li><%= link_to 'Profile', current_user %></li>
+          <li><%= link_to 'Log out', logout_path %></li>
         <% else %>
           <li><%= link_to 'Sign in with Twitter', "/auth/twitter" %></li>
         <% end %>
       </ul>
     </div>
   </div>
-  <div class='container' id='fab-container'>
+  <div class="container" id="fab-container">
     <%= link_to '', '#', data: { toggle: 'modal', target: '#new-post-modal' }, class: "btn btn-warning btn-fab btn-raised mdi-content-add", id: "add-post" %>
   </div>
 </div>
@@ -32,9 +32,9 @@
         scroll_pos = $(this).scrollTop();
         console.log('scroll_pos: ', scroll_pos)
         if(scroll_pos > 45) {
-          $(".navbar-default, .navbar-brand, .navbar-right, .navbar-left, .btn-fab").addClass('pastNavbarBottom');
+          $("#fab-container, .navbar, .navbar-brand, .navbar-right, .navbar-left, .btn-fab").addClass('pastNavbarBottom');
         } else {
-          $(".navbar-default, .navbar-brand, .navbar-right, .navbar-left, .btn-fab").removeClass('pastNavbarBottom');
+          $("#fab-container, .navbar, .navbar-brand, .navbar-right, .navbar-left, .btn-fab").removeClass('pastNavbarBottom');
         }
     });
   });
