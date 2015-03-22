@@ -21,47 +21,24 @@
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+    <li role="presentation" class="active"><a href="#upvoted_posts" aria-controls="upvoted_posts" role="tab" data-toggle="tab">Upvoted Posts</a></li>
+    <li role="presentation"><a href="#submitted_posts" aria-controls="submitted_posts" role="tab" data-toggle="tab">Submitted Posts</a></li>
+    <li role="presentation"><a href="#followers" aria-controls="followers" role="tab" data-toggle="tab">Followers</a></li>
+    <li role="presentation"><a href="#following" aria-controls="following" role="tab" data-toggle="tab">Following</a></li>
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">Home is the active tab</div>
-    <div role="tabpanel" class="tab-pane" id="profile">Profile is the active tab</div>
-    <div role="tabpanel" class="tab-pane" id="messages">Messages is the active tab</div>
-    <div role="tabpanel" class="tab-pane" id="settings">Settings is the active tab</div>
+    <div role="tabpanel" class="tab-pane active" id="upvoted_posts">
+      <%= render "upvoted_posts" %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="submitted_posts">
+      <%= render "submitted_posts" %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="followers">Followers is the active tab</div>
+    <div role="tabpanel" class="tab-pane" id="following">Following is the active tab</div>
   </div>
 </div>
-
-  <table class="table table-hover">
-      <thead>
-        <th class="col-md-1"></th>
-        <th class="col-md-9"></th>
-        <th class="col-md-2"></th>
-      </thead>
-      <tbody>
-        <% @upvotedPosts.each do |post| %>
-            <tr data-link="<%= post_path(post) %>">
-                <td>
-                  <%= link_to like_post_path(post), method: :put, class: "btn btn-warning btn-raised mdi-navigation-arrow-drop-up" do %>
-                  <p><%= post.get_upvotes.size %></p>
-                  <% end %>
-                </td>
-                <td>
-                  <div class="post-item-info">
-                    <h4 class="list-group-item-heading"><a href="<%= post.url %>" target="_blank"><%= post.name %></a></h4>
-                    <p class="list-group-item-text"><%= post.description %></p>
-                  </div>
-                </td>
-                <td>
-                </td>
-            </tr>
-        <% end %>
-      </tbody>
-  </table>
 
   <!-- Hidden Bootstrap Modal Markup -->
   <div class="modal fade" id="new-post-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

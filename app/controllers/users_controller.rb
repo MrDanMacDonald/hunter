@@ -3,8 +3,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @upvotedPosts = @user.find_up_voted_items
-    @post = @user.posts.new
+    @upvoted_posts = @user.find_up_voted_items
+    @submitted_posts = @user.posts
+    @post = Post.new
   end
 
   def new
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @upvotedPosts = @user.find_up_voted_items
+    @upvoted_posts = @user.find_up_voted_items
     if @user.update_attributes(user_params)
       flash[:success] = 'Profile Updated!'
       redirect_to @user
