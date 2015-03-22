@@ -14,9 +14,25 @@ describe User do
   it { should respond_to(:description) }
   it { should respond_to(:location) }
 
+  it { should respond_to(:follow) }
+  it { should respond_to(:unfollow) }
+
   let(:user) { FactoryGirl.create(:user) }
+  let(:other_user) { FactoryGirl.create(:user) }
 
   it "should be valid" do
     expect(user).to be_valid
   end
+
+  it "should follow a user" do
+    user.follow(other_user)
+    expect(user.following?(other_user)).to eq true
+  end
+
+  it "should unfollow a user" do
+    user.follow(other_user)
+    user.unfollow(other_user)
+    expect(user.following?(other_user)).to eq false
+  end
+
 end
