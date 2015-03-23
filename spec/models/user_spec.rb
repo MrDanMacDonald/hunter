@@ -27,6 +27,7 @@ describe User do
   it "should follow a user" do
     user.follow(other_user)
     expect(user.following?(other_user)).to eq true
+    expect(other_user.followers.include?(user)).to eq true
   end
 
   it "should unfollow a user" do

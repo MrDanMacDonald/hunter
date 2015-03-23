@@ -6,7 +6,11 @@ Rails.application.routes.draw do
 
   get 'comments/new'
 
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers  
+    end
+  end
   resources :posts do 
     resources :comments, only: [:index, :create]
     get '/comments/new/(:parent_id)', to: 'comments#new', as: :new_comment
@@ -14,6 +18,7 @@ Rails.application.routes.draw do
       put 'like', to: 'posts#upvote'
     end
   end
+  resources :relationships, only: [:create, :destroy]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

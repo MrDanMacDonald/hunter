@@ -4,6 +4,10 @@ body {
   padding-top: 190px;
 }
 
+a:link {
+  text-decoration:none;
+}
+
 /*Upvote button on posts#INDEX */
 
 .btn.btn-warning.mdi-navigation-arrow-drop-up {
@@ -34,6 +38,7 @@ body {
 }
 
 /*users#SHOW */
+
 .list-group .list-group-item .row-picture .profile-photo img {
   width: 125px;
   height: 125px;
@@ -41,6 +46,24 @@ body {
 
 .list-group .list-group-item .row-content {
   display: inline;
+}
+
+/*user profile*/
+
+.followers-list {
+  padding-top: 20px;
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+}
+
+.list-group-item.followers-list-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.list-group-item.followers-list-item:hover {
+  background-color: #f5f5f5;
 }
 
 /*posts#SHOW */
