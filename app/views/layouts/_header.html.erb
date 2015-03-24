@@ -12,6 +12,7 @@
     </div>
     <div class='navbar-collapse collapse navbar-responsive-collapse'>
       <ul class='nav navbar-nav navbar-right' id='menu-right'>
+        <li><%= link_to "Search", search_path %></li>
         <% if logged_in? %>
           <li><%= link_to 'Profile', current_user %></li>
           <li><%= link_to 'Log out', logout_path %></li>
@@ -26,9 +27,14 @@
   </div>
 </div>
 <script type="text/javascript">
-  $(document).ready(function(){       
+  $(document).ready(function(){
+    // $("#search").click(function() {
+    //   $("#search-bar").append(
+    //     '<input type="text" class="form-control" placeholder="Search">'
+    //     );
+    // });
     var scroll_pos = 0;
-    $(document).scroll(function() { 
+    $(document).scroll(function() {
         scroll_pos = $(this).scrollTop();
         console.log('scroll_pos: ', scroll_pos)
         if(scroll_pos > 45) {

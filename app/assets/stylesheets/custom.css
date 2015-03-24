@@ -144,6 +144,16 @@ a:link {
   background-color: #78909C;
 }
 
+#search {
+  font-size: 24px;
+  padding: 18px 15px;
+}
+
+#search-bar.form-control {
+  background-color: white;
+  border-bottom: #ff5722;
+}
+
 /*On scroll*/
 
 .pastNavbarBottom#fab-container {

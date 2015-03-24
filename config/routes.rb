@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get :following, :followers  
     end
   end
+
   resources :posts do 
     resources :comments, only: [:index, :create]
     get '/comments/new/(:parent_id)', to: 'comments#new', as: :new_comment
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
       put 'like', to: 'posts#upvote'
     end
   end
+
   resources :relationships, only: [:create, :destroy]
 
   get '/login', to: 'sessions#new'
@@ -25,4 +27,5 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create_from_twitter'
   get '/logout', to: 'sessions#destroy'
   get '/signup', to: 'users#new'
+  get 'search', to: 'search#search'
 end
