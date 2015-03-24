@@ -5,6 +5,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @upvoted_posts = @user.find_up_voted_items
     @submitted_posts = @user.posts
+    @followers = @user.followers
+    @following = @user.following
     @post = Post.new
   end
 

@@ -1,24 +1,27 @@
 <div class="well bs-component">
   <div class="list-group" id="user-profile">
     <div class="list-group-item">
-        <div class="row-picture">
-<!--      TODO: Replace default image with a placeholder avatar -->
+      <div class="row">
+        <div class="row-picture col-md-2">
+          <!-- TODO: Add a placeholder avatar -->
           <div class="profile-photo">
             <% if @user.photo %>
               <%= image_tag @user.photo.to_s, class: "circle" %>
             <% end %>
           </div>
         </div>
-          <div class="row-content">
-            <h2><%= @user.name %></h2>
-            <h4><%= @user.email %></h4>
-             <%= link_to 'Edit Profile', edit_user_path, class: 'btn btn-info button-right' %>
-          </div>
+        <div class="col-md-4">
+          <h2><%= @user.name %></h2>
+          <h4><%= @user.email %></h4>
+          <%= render "follow_or_unfollow" %>
+        </div>
+        <div class="col-md-6">
+        </div>
+      </div>
     </div>
   </div>
 
 <div role="tabpanel">
-
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#upvoted_posts" aria-controls="upvoted_posts" role="tab" data-toggle="tab">Upvoted Posts</a></li>
@@ -35,8 +38,12 @@
     <div role="tabpanel" class="tab-pane" id="submitted_posts">
       <%= render "submitted_posts" %>
     </div>
-    <div role="tabpanel" class="tab-pane" id="followers">Followers is the active tab</div>
-    <div role="tabpanel" class="tab-pane" id="following">Following is the active tab</div>
+    <div role="tabpanel" class="tab-pane" id="followers">
+      <%= render "followers" %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="following">
+      <%= render "following" %>
+    </div>
   </div>
 </div>
 

@@ -1,0 +1,11 @@
+<% if current_user == @user %>
+  <%= link_to 'Edit Profile', edit_user_path, class: 'btn btn-info button-right' %>
+<% else %>
+  <div id="follow-form">
+    <% if current_user.following?(@user) %>
+      <%= render 'unfollow' %>
+    <% else %>
+      <%= render 'follow' %>
+    <% end %>
+  </div>
+<% end %>

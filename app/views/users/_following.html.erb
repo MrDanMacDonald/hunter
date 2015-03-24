@@ -1,0 +1,19 @@
+<div class="list-group">
+  <ul class="followers-list">
+    <% @following.each do |following| %>
+      <%= link_to user_path(following) do %>
+        <li>
+          <div class="list-group-item followers-list-item">
+            <div class="row-picture">
+              <%= image_tag following.photo, class: "user-photo-small" %>
+            </div>
+            <div class="row-content">
+              <h4 class="list-group-item-heading"><%= following.name %></h4>
+              <p class="list-group-item-text">Twitter Handle Placeholder</p>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
