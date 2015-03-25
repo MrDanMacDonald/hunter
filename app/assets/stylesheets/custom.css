@@ -149,9 +149,12 @@ a:link {
   padding: 18px 15px;
 }
 
-#search-bar.form-control {
-  background-color: white;
-  border-bottom: #ff5722;
+#search-text {
+  border-color: #ffffff;
+}
+
+#search-field {
+  padding-top: 7px;
 }
 
 /*On scroll*/
