@@ -1,11 +1,24 @@
 class SearchController < ApplicationController
 
-  # TODO: search multiple models at once
-  def search
-    if params[:q].nil?
-      @users = []
+  def search_form
+    if params['/search_form'] && !params['/search_form']['q'].nil?
+      @users = User.search params['/search_form']['q']
     else
-      @users = User.search params[:q]
+      @users = []
     end
   end
+
+  # def self.search(query)
+  #   __elasticsearch__.search(
+  #     {
+  #       query: {
+  #         multi_match: {
+  #           query: query,
+  #           fields: ['title^10', 'text']
+  #         }
+  #       }
+  #     }
+  #   )
+  # end
+
 end
