@@ -1,0 +1,25 @@
+<div class="well bs-component">
+  <div role="tabpanel">
+    <div class="tab-content">
+      <div class="list-group">
+        <ul class="followers-list">
+          <% @users.each do |user| %>
+            <%= link_to user_path(user) do %>
+              <li>
+                <div class="list-group-item users-list-item">
+                  <div class="row-picture">
+                    <%= image_tag user.photo, class: "user-photo-small" %>
+                  </div>
+                  <div class="row-content">
+                    <h4 class="list-group-item-heading"><%= user.name %></h4>
+                    <p class="list-group-item-text">Twitter Handle Placeholder</p>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

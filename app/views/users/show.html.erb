@@ -39,10 +39,10 @@
       <%= render "submitted_posts" %>
     </div>
     <div role="tabpanel" class="tab-pane" id="followers">
-      <%= render "followers" %>
+      <%= render partial: "followers", locals: { followers: @followers} %>
     </div>
     <div role="tabpanel" class="tab-pane" id="following">
-      <%= render "following" %>
+      <%= render partial: "following", locals: { following: @following } %>
     </div>
   </div>
 </div>
