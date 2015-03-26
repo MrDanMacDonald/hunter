@@ -1,4 +1,3 @@
-require 'elasticsearch/model'
 class User < ActiveRecord::Base
   attr_accessor :remember_token
   before_save { self.email = email.downcase if self.email }
@@ -21,9 +20,6 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships
 
   acts_as_voter
-
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
 
   def self.create_with_omniauth(auth)
     create! do |user|
@@ -72,5 +68,3 @@ class User < ActiveRecord::Base
     following.include?(other_user)
   end
 end
-
-User.import # For auto sync model with elasticsearch

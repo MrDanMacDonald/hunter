@@ -28,5 +28,4 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   get '/signup', to: 'users#new'
   get 'search', to: 'search#search'
-  get 'search_form', to: 'search#search_form'
 end

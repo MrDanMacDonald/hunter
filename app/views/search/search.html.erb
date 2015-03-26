@@ -1,0 +1,24 @@
+
+<%if @users && @posts %>
+
+  <% @users.each do |user| %>
+    <%= link_to user.name, user_path(user.id) %>
+  <% end %>
+
+  <% @posts.each do |post| %>
+    <%= link_to post.name, post_path(post.id) %>
+  <% end %>
+
+<% elsif @users %>
+
+  <% @users.each do |user| %>
+    <%= link_to user.name, user_path(user.id) %>
+  <% end %>
+
+<% elsif @posts %>
+
+  <% @posts.each do |post| %>
+    <%= link_to post.name, post_path(post.id) %>
+  <% end %>
+
+<% end %>
