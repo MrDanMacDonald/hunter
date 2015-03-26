@@ -12,6 +12,12 @@
     </div>
     <div class='navbar-collapse collapse navbar-responsive-collapse'>
       <ul class='nav navbar-nav navbar-right' id='menu-right'>
+        <li>
+          <%= link_to search_form_path, remote: true, id: 'search' do %>
+            <i class='mdi-action-search'></i>
+          <% end %>
+        </li>
+        <li id='search-bar'></li>
         <% if logged_in? %>
           <li><%= link_to 'Profile', current_user %></li>
           <li><%= link_to 'Log out', logout_path %></li>
@@ -25,10 +31,11 @@
     <%= link_to '', '#', data: { toggle: 'modal', target: '#new-post-modal' }, class: "btn btn-warning btn-fab btn-raised mdi-content-add", id: "add-post" %>
   </div>
 </div>
+<!-- Apply style changes to navbar on scroll -->
 <script type="text/javascript">
-  $(document).ready(function(){       
+  $(document).ready(function(){
     var scroll_pos = 0;
-    $(document).scroll(function() { 
+    $(document).scroll(function() {
         scroll_pos = $(this).scrollTop();
         console.log('scroll_pos: ', scroll_pos)
         if(scroll_pos > 45) {

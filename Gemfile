@@ -21,6 +21,8 @@ gem 'shareable'
 gem 'bcrypt'
 gem 'closure_tree'
 gem 'omniauth-twitter'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 group :development do
   gem 'better_errors'
