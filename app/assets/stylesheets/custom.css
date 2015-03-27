@@ -57,12 +57,12 @@ a:link {
   -moz-columns: 3;
 }
 
-.list-group-item.followers-list-item {
+/*.followers-list-item {
   padding-top: 10px;
   padding-bottom: 10px;
-}
+}*/
 
-.list-group-item.followers-list-item:hover {
+.followers-list-item:hover {
   background-color: #f5f5f5;
 }
 
