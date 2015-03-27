@@ -6,7 +6,7 @@
           <% @users.each do |user| %>
             <%= link_to user_path(user) do %>
               <li>
-                <div class="list-group-item users-list-item">
+                <div class="list-group-item followers-list-item">
                   <div class="row-picture">
                     <%= image_tag user.photo, class: "user-photo-small" %>
                   </div>
