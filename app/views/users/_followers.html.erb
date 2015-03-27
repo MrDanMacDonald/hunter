@@ -2,8 +2,8 @@
   <ul class="followers-list">
     <% @followers.each do |follower| %>
       <%= link_to user_path(follower) do %>
-        <li>
-          <div class="list-group-item followers-list-item">
+        <li class="followers-list-item">
+          <div class="list-group-item">
             <div class="row-picture">
               <%= image_tag follower.photo, class: "user-photo-small" %>
             </div>
