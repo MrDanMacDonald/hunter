@@ -2,9 +2,6 @@ class CommentsController < ApplicationController
   before_action :logged_in_user, only: [:reply, :create]
   respond_to :html, :js
 
-  def index
-  end
-
   def new
     @comment = Comment.new
     @parent = Comment.find(params[:parent_id]) if params[:parent_id]
@@ -22,7 +19,7 @@ class CommentsController < ApplicationController
     @comment.commentable = @commentable
     @comment.user = current_user
     if @comment.save
-      flash[:success] = 'Comment created!'
+      flash.now[:success] = 'Comment created!'
       redirect_to @commentable
     else
       render @commentable

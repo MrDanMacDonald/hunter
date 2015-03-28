@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = 'Welcome!'
+      flash.now[:success] = 'Welcome!'
       redirect_to @user
     else
       render 'new'
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @upvoted_posts = @user.find_up_voted_items
     if @user.update_attributes(user_params)
-      flash[:success] = 'Profile Updated!'
+      flash.now[:success] = 'Profile Updated!'
       redirect_to @user
     else
       render 'edit'

@@ -20,10 +20,10 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      flash[:success] = 'Post submitted!'
+      flash.now[:success] = 'Post submitted!'
       redirect_to posts_path
     else
-      flash[:danger] = 'This resource has already been posted'
+      flash.now[:danger] = 'This resource has already been posted'
       render 'posts/index'
     end
   end
