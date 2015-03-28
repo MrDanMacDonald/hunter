@@ -1,14 +1,14 @@
 <div class="list-group">
   <ul class="followers-list">
-    <% @following.each do |following| %>
-      <%= link_to user_path(following) do %>
+    <% users.each do |user| %>
+      <%= link_to user_path(user) do %>
         <li class="followers-list-item">
           <div class="list-group-item">
             <div class="row-picture">
-              <%= image_tag following.photo, class: "user-photo-small" %>
+              <%= image_tag user.photo, class: "user-photo-small" %>
             </div>
             <div class="row-content">
-              <h4 class="list-group-item-heading"><%= following.name %></h4>
+              <h4 class="list-group-item-heading"><%= user.name %></h4>
               <p class="list-group-item-text">Twitter Handle Placeholder</p>
             </div>
           </div>
