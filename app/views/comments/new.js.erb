@@ -1,1 +1,1 @@
-$("#reply-link").hide().after("<%= escape_javascript(render partial: 'comments/form', locals: { comment: @comment, commentable: @commentable} ) %>"); 
+$("#reply-link-<%= @parent.id %>").hide().after("<%= escape_javascript(render partial: 'comments/form', locals: { comment: @comment, commentable: @commentable} ) %>"); 

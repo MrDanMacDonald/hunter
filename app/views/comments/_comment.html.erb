@@ -17,7 +17,7 @@
     <h4 class="list-group-item-text">
       <%= comment.content %>
     </h4>
-    <%= link_to "Reply", comments_new_path(parent_id: comment.id, commentable: @post), remote: true, id: 'reply-link' %>
+    <%= link_to "Reply", comments_new_path(parent_id: comment.id, commentable: @post), remote: true, id: "reply-link-#{comment.id}" %>
   </div>
 </div>
 <div class="list-group-separator"></div>
