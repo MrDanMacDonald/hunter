@@ -6,7 +6,7 @@
   </thead>
   <tbody>
     <% posts.each do |post| %>
-      <tr data-link="<%= post_path(post) %>">
+      <tr>
         <td>
           <%= render partial: "upvotes", locals: { post: post} %>
         </td>

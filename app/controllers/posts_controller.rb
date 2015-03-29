@@ -13,10 +13,15 @@ class PostsController < ApplicationController
 
   def upvote
     @post = Post.find(params[:id])
-    @post.upvote_by current_user
     respond_to do |format|
-      format.html
-      format.js
+      unless current_user.voted_for? @post
+        format.html { redirect_to(@post) }
+        format.js
+        @post.upvote_by current_user
+      else
+        format.html { redirect_to(@posts) }
+        format.js
+      end
     end
   end
 

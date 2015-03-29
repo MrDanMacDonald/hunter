@@ -2,9 +2,6 @@
   <!-- Post info -->
   <div class="row">
     <div class="col-md-1">
-      <%= link_to like_post_path(@post), method: :put, class: "btn btn-warning btn-raised mdi-navigation-arrow-drop-up", id: "large-button" do %>
-      <p><%= @post.get_upvotes.size %></p>
-      <% end %>
     </div>
     <div class="col-md-11">
       <span id="post-name">
