@@ -8,7 +8,7 @@
     <% posts.each do |post| %>
       <tr>
         <td>
-          <%= render partial: "upvotes", locals: { post: post} %>
+          <%= render partial: "posts/upvotes", locals: { post: post} %>
         </td>
         <td data-link="<%= post_path(post) %>">
           <div class="post-item-info">

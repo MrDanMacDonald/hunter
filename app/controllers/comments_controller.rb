@@ -18,11 +18,18 @@ class CommentsController < ApplicationController
     @commentable = Post.find(params[:post_id])
     @comment.commentable = @commentable
     @comment.user = current_user
-    if @comment.save
-      flash.now[:success] = 'Comment created!'
-      redirect_to @commentable
-    else
-      render @commentable
+    respond_to do |format|
+      if @comment.save
+        @comments = @commentable.comments.hash_tree
+        flash.now[:success] = 'Comment created!'
+        format.html { redirect_to @commentable }
+        format.js
+      else
+        @comments = @commentable.hash_tree
+        render @commentable
+        format.html { redirect_to @commentable }
+        format.js
+      end
     end
   end
 

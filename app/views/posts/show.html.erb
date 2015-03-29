@@ -58,8 +58,8 @@
   <hr>
 
 <!--   Comments -->
-  <h2><%= pluralize(@comments.count, "Comment")%></h2>
-  <div class="list-group">
+  <h2 id="comment-count"><%= render 'comments/count', locals: { comment: @comment } %></h2>
+  <div class="list-group" id="comments">
     <%= comments_tree_for @comments %>
   </div>
   <div class="row">

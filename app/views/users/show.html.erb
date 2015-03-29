@@ -33,10 +33,10 @@
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="upvoted_posts">
-      <%= render partial: "posts", locals: { posts: @upvoted_posts } %>
+      <%= render partial: "shared/posts", locals: { posts: @upvoted_posts } %>
     </div>
     <div role="tabpanel" class="tab-pane" id="submitted_posts">
-      <%= render partial: "posts", locals: { posts: @submitted_posts } %>
+      <%= render partial: "shared/posts", locals: { posts: @submitted_posts } %>
     </div>
     <div role="tabpanel" class="tab-pane" id="followers">
       <%= render partial: "users", locals: { users: @followers} %>
