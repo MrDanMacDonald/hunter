@@ -10,7 +10,7 @@
         <td>
           <%= render partial: "upvotes", locals: { post: post} %>
         </td>
-        <td>
+        <td data-link="<%= post_path(post) %>">
           <div class="post-item-info">
             <h4 class="list-group-item-heading">
               <a href="<%= post.url %>" target="_blank"><%= post.name %></a>
@@ -28,7 +28,7 @@
   </tbody>
 </table>
 <script type="text/javascript">
-  $("tr[data-link]").click(function() {
+  $("td[data-link]").click(function() {
       window.location = this.dataset.link
   })
 </script>

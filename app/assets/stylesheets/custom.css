@@ -68,7 +68,7 @@ a:link {
 
 /*posts#SHOW */
 
-#large-button {
+.btn.btn-warning.mdi-navigation-arrow-drop-up.large-button {
   padding: 10px 10px;
   display: inline-block;
 }
