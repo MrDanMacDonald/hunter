@@ -24,16 +24,30 @@ a:link {
   border: 0px;
 }
 
+#table-cell-1 {
+  width: 5%;
+}
+
 .present-date {
   display: inline;
 }
 
+#date {
+  color: #757575;
+}
+
 /*Table body*/
+
+.table {
+  margin-bottom: 0px;
+}
+
 .table>tbody>tr>td {
   border: 0px;
 }
 
 .post-item-info {
+  color: #757575;
   margin: 10px;
 }
 

@@ -1,6 +1,6 @@
 <table class="table table-hover">
   <thead>
-    <th class="col-md-1"></th>
+    <th class="col-md-1" id="table-cell-1"></th>
     <th class="col-md-9"></th>
     <th class="col-md-2"></th>
   </thead>
@@ -15,13 +15,13 @@
             <h4 class="list-group-item-heading">
               <a href="<%= post.url %>" target="_blank"><%= post.name %></a>
             </h4>
-            <p class="list-group-item-text"><%= post.description %></p>
+            <p><%= post.description %></p>
           </div>
         </td>
         <td>
-          <div class="post-item-info">
+          <h5 class="post-item-info">
             <%= link_to post.name_of_user, user_path(post.user) %>
-          </div>
+          </h5>
         </td>
       </tr>
     <% end %>
