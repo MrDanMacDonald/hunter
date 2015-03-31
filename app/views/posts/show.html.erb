@@ -6,12 +6,11 @@
       <p id='upvote_size-<%= @post.id %>'><%= @post.get_upvotes.size %></p>
       <% end %>
     </div>
-    <div class="col-md-11">
+    <div class="col-md-11" id="post-info">
       <span id="post-name">
-        <h2><%= @post.name %></h2>
+        <h2><a href="<%= @post.url %>" target="_blank"><%= @post.name %></a></h2>
       </span>
-      <h3><%= @post.description %></h3>
-      <h4><a href="<%= @post.url %>" target="_blank"><%= @post.url %></a></h4>
+      <h4><%= @post.description %></h4>
     </div>
   </div>
   <hr>
@@ -21,21 +20,19 @@
     <div class="col-md-4">
       <div class="user-photo-container">
   <!--    TODO: Replace default image with a placeholder avatar -->
-          <div class="profile-photo">
-            <% if @post.user_photo %>
-              <%= image_tag @post.user_photo, class: "user-photo-small" %>
-            <% else %>
-              <img class="user-photo-small" src="https://pbs.twimg.com/profile_images/485866025884188673/mm_ifWVp.jpeg" alt="icon">
-            <% end %>
-          </div>
+        <% if @post.user_photo %>
+          <%= image_tag @post.user_photo, class: "user-photo-small" %>
+        <% else %>
+          <img class="user-photo-small" src="https://pbs.twimg.com/profile_images/485866025884188673/mm_ifWVp.jpeg" alt="icon">
+        <% end %>
       </div>
-      <div class="user-info-container">
+      <div id="user-info-container">
         <span>Posted <%= time_ago_in_words(@post.created_at) %> ago by </span>
         <%= link_to @post.name_of_user, user_path(@post.user) %>
       </div>
     </div>
     <div class="col-md-5">
-      <div class="number-of-upvotes">
+      <div id="user-info-container">
         <span><%= @post.get_upvotes.size %> Upvotes</span>
         <% @post.voters.each do |voter| %>
           <ul class="no-bullets">
