@@ -32,8 +32,8 @@
       </div>
     </div>
     <div class="col-md-5">
-      <div id="user-info-container">
-        <span><%= @post.get_upvotes.size %> Upvotes</span>
+      <div id="upvote-info-container">
+        <div id="upvotes-number"><%= @post.get_upvotes.size %> Upvotes</div>
         <% @post.voters.each do |voter| %>
           <ul class="no-bullets">
             <li><%= image_tag voter.photo, class: "user-photo-x-small" %></li>
@@ -55,7 +55,7 @@
   <hr>
 
 <!--   Comments -->
-  <h2 id="comment-count"><%= render 'comments/count', locals: { comment: @comment } %></h2>
+  <h3 id="comment-count"><%= render 'comments/count', locals: { comment: @comment } %></h3>
   <div class="list-group" id="comments">
     <%= comments_tree_for @comments %>
   </div>

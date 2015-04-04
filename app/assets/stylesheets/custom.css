@@ -111,6 +111,15 @@ a:link {
   padding-top: 6px;
 }
 
+#upvote-info-container {
+  display: inline-block;
+  padding-top: 6px;
+}
+
+#upvotes-number {
+  margin-bottom: 8px;
+}
+
 .user-photo-small {
   display: inline;
   border-radius: 100%;
