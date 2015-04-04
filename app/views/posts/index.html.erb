@@ -2,36 +2,17 @@
   <table class="table table-hover">
       <thead>
         <th class="col-md-1">
-          <h3 class='present-date'>Today</h3>
+          <h2 class="present-date">Today</h2>
         </th>
         <th class="col-md-10">
-          <h4 class='present-date'>
+          <h4 class="present-date" id="date">
             <%= @date.strftime("%B #{@date.day.ordinalize}") %>
           </h4>
         </th>
         <th class="col-md-1"></th>
       </thead>
       <tbody>
-        <% @posts.each do |post| %>
-            <tr data-link="<%= post_path(post) %>">
-                <td>
-                  <%= link_to like_post_path(post), method: :put, class: "btn btn-warning btn-raised mdi-navigation-arrow-drop-up" do %>
-                  <p><%= post.get_upvotes.size %></p>
-                  <% end %>
-                </td>
-                <td>
-                  <div class="post-item-info">
-                    <h4 class="list-group-item-heading"><a href="<%= post.url %>" target="_blank"><%= post.name %></a></h4>
-                    <p class="list-group-item-text"><%= post.description %></p>
-                  </div>
-                </td>
-                <td>
-                  <div class="post-item-info">
-                    <%= link_to post.name_of_user, user_path(post.user) %>
-                  </div>
-                </td>
-            </tr>
-        <% end %>
+        <%= render partial: "shared/posts", locals: { posts: @posts } %>
       </tbody>
   </table>
 </div>
@@ -55,8 +36,8 @@
   </div>
 </div>
 
-<script>
+<script type="text/javascript">
   $("tr[data-link]").click(function() {
-    window.location = this.dataset.link
-})
+      window.location = this.dataset.link
+  })
 </script>

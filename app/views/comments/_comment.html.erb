@@ -1,23 +1,15 @@
-<div class="list-group-item">
+<div class="list-group-item comment">
   <div class="user-photo-container">
-<!-- TODO: Replace default image with a placeholder avatar -->
-  <div class="profile-photo">
+    <!-- TODO: Replace default image with a placeholder avatar -->
     <% if comment.commenter_photo %>
       <%= image_tag comment.commenter_photo, class: "user-photo-small" %>
     <% else %>
       <img class="user-photo-small" src="https://pbs.twimg.com/profile_images/485866025884188673/mm_ifWVp.jpeg" alt="icon">
     <% end %>
-    <h4 id="commenter-name">
-      <strong>
-        <%= link_to comment.commenter_name, user_path(comment.user) %>
-      </strong>
-    </h4>
   </div>
-  <div class="row-content">
-    <h4 class="list-group-item-text">
-      <%= comment.content %>
-    </h4>
-    <%= link_to "Reply", comments_new_path(parent_id: comment.id, commentable: @post), remote: true, id: 'reply-link' %>
+  <div id="comment-body">
+    <strong><%= link_to comment.commenter_name, user_path(comment.user) %></strong>
+    <p><%= comment.content %></p>
+    <%= link_to "Reply", comments_new_path(parent_id: comment.id, commentable: @post), remote: true, id: "reply-link-#{comment.id}" %>
   </div>
 </div>
-<div class="list-group-separator"></div>

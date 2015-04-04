@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def logged_in_user
     unless logged_in?
       store_location
-      flash[:danger] = 'You must sign in to do that!'
+      flash.now[:danger] = 'You must sign in to do that!'
       redirect_to posts_url
     end
   end

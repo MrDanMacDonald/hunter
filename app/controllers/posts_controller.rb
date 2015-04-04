@@ -1,10 +1,9 @@
 class PostsController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :upvote, :destroy]
+  before_action :set_date_and_posts
   respond_to :html, :js
 
   def index
-    @date = Time.now
-    @posts = Post.all
     if logged_in?
       @post = current_user.posts.build
     else
@@ -14,17 +13,26 @@ class PostsController < ApplicationController
 
   def upvote
     @post = Post.find(params[:id])
-    @post.upvote_by current_user
-    redirect_to :back
+    respond_to do |format|
+      unless current_user.voted_for? @post
+        format.html { redirect_to(@post) }
+        format.js
+        @post.upvote_by current_user
+      else
+        format.html { redirect_to(@posts) }
+        format.js
+      end
+    end
   end
 
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      flash[:success] = 'Post submitted!'
+      flash.now[:success] = 'Post submitted!'
       redirect_to posts_path
     else
-      render 'static_pages/home'
+      flash.now[:danger] = 'This resource has already been posted'
+      render 'posts/index'
     end
   end
 
@@ -35,10 +43,12 @@ class PostsController < ApplicationController
     @comment = Comment.new
   end
 
-  def destroy
-  end
-
   private
+
+  def set_date_and_posts
+    @date = Time.now
+    @posts = Post.all
+  end
 
   def post_params
     params.require(:post).permit(:name, :url, :description)

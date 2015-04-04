@@ -24,16 +24,30 @@ a:link {
   border: 0px;
 }
 
+#table-cell-1 {
+  width: 5%;
+}
+
 .present-date {
   display: inline;
 }
 
+#date {
+  color: #757575;
+}
+
 /*Table body*/
+
+.table {
+  margin-bottom: 0px;
+}
+
 .table>tbody>tr>td {
   border: 0px;
 }
 
 .post-item-info {
+  color: #757575;
   margin: 10px;
 }
 
@@ -68,13 +82,17 @@ a:link {
 
 /*posts#SHOW */
 
-#large-button {
+.btn.btn-warning.mdi-navigation-arrow-drop-up.large-button {
   padding: 10px 10px;
   display: inline-block;
 }
 
 #post-name>h2 {
   margin-top: 0px;
+}
+
+#post-info {
+  padding-top: 10px
 }
 
 #edit-user-profile {
@@ -84,17 +102,29 @@ a:link {
 
 .user-photo-container {
   display: inline-block;
-  padding-right: 16px;
+  position: absolute;
 }
 
-.user-info-container {
+#user-info-container {
   display: inline-block;
+  padding-left: 45px;
+  padding-top: 6px;
+}
+
+#upvote-info-container {
+  display: inline-block;
+  padding-top: 6px;
+}
+
+#upvotes-number {
+  margin-bottom: 8px;
 }
 
 .user-photo-small {
+  display: inline;
   border-radius: 100%;
-  width: 56px;
-  height: 56px;
+  width: 30px;
+  height: 30px;
 }
 
 .user-photo-x-small {
@@ -117,10 +147,6 @@ a:link {
 
 .right {
   float: right;
-}
-
-.replies {
-  margin-left: 50px;
 }
 
 /*Navbar and FAB*/
@@ -333,6 +359,33 @@ a:link {
 ul.no-bullets {
   list-style-type: none;
   padding: 3px;
+}
+
+/*Comments*/
+
+#comment-body {
+  display: inline-block;
+  padding-left: 45px;
+}
+
+#comment-form {
+  padding-top: 10px;
+}
+
+.list-group#comments {
+  margin: 0px 20px;
+}
+
+.list-group-item.comment {
+  padding: 10px 0px;
+}
+
+.replies {
+  margin-left: 50px;
+}
+
+.child_replies {
+  margin-left: 0px;
 }
 
 /*Commenters*/

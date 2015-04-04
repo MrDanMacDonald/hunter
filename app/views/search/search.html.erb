@@ -1,8 +1,8 @@
 <%if @users.length > 0 && @posts.length > 0%>
   <%= render partial: "shared/users", locals: { users: @users } %>
-  <%= render partial: "shared/posts" %>
+  <%= render partial: "shared/posts", locals: { posts: @posts } %>
 <% elsif @users.length > 0 %>
   <%= render partial: "shared/users", locals: { users: @users } %>
 <% elsif @posts.length > 0 %>
-  <%= render partial: "shared/posts" %>
+  <%= render partial: "shared/posts", locals: { posts: @posts } %>
 <% end %>
