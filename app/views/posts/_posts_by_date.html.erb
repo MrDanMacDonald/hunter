@@ -1,0 +1,39 @@
+<% posts_by_date.each do |date, post| %>
+    <div class="row">
+      <div>
+        <% if date == @todays_date %>
+          <h3 id="present-date">Today</h3>
+        <% else %>
+          <h5 id='day-of-week'><%= date.strftime("%A") %>,</h5>
+        <% end %>
+          <h5 id='month-ordinalized'><%= date.strftime("%B #{date.day.ordinalize}") %></h5>
+      </div>
+    </div>
+
+    <div class="well bs-component">
+      <% post.each do |post| %>
+        <div class="list-item-row">
+          <%= render partial: "posts/upvotes", locals: { post: post} %>
+          <div id="list-item-left-contents" data-link="<%= post_path(post) %>">
+            <div id="list-item-info">
+              <h4 id="list-item-heading">
+                <a href="<%= post.url %>" target="_blank"><%= post.name %></a>
+              </h4>
+              <p id="list-item-details"><%= post.description %></p>
+            </div>
+          </div>
+          <div id="list-item-right-contents">
+            <h5>
+              <%= link_to post.name_of_user, user_path(post.user) %>
+            </h5>
+          </div>
+        </div>
+        <hr></hr>
+      <% end %>
+    </div>
+  <% end %>
+<script type="text/javascript">
+  $("div[data-link]").click(function() {
+      window.location = this.dataset.link
+  })
+</script>

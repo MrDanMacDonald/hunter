@@ -1,20 +1,5 @@
-<div class="well bs-component">
-  <table class="table table-hover">
-      <thead>
-        <th class="col-md-1">
-          <h2 class="present-date">Today</h2>
-        </th>
-        <th class="col-md-10">
-          <h4 class="present-date" id="date">
-            <%= @date.strftime("%B #{@date.day.ordinalize}") %>
-          </h4>
-        </th>
-        <th class="col-md-1"></th>
-      </thead>
-      <tbody>
-        <%= render partial: "shared/posts", locals: { posts: @posts } %>
-      </tbody>
-  </table>
+<div>
+  <%= render partial: "posts/posts_by_date", locals: { posts_by_date: @posts_by_date } %>
 </div>
 
 <!-- Hidden Bootstrap Modal Markup -->
