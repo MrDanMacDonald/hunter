@@ -1,2 +1,2 @@
-$("#comments").prepend("<%= escape_javascript(render partial: 'comment', locals: { comment: @comment }) %>");
+$("#comment-form").html("<%= escape_javascript(render partial: 'comment', locals: { comment: @comment }) %>");
 $("#comment-count").html("<%= escape_javascript(render partial: 'count', locals: { comments: @comments }) %>");

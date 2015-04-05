@@ -36,29 +36,29 @@ a:link {
   background-color: #f5f5f5;
 }
 
-#list-item-left-contents {
+.list-item-left-contents {
   display: inline-block;
   cursor: pointer;
 }
 
-#list-item-right-contents {
-  display: inline-block;
+.list-item-right-contents {
+  display: flex;
   margin-left: auto;
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
-#list-item-info {
+.list-item-info {
   display: inline-block;
   padding-left: 11px;
 }
 
-#list-item-heading {
+.list-item-heading {
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
-#list-item-details {
+.list-item-details {
   margin-bottom: 0px;
 }
 
@@ -164,6 +164,20 @@ hr {
 
 /*posts#SHOW */
 
+.well.bs-component.show {
+  margin-top: 45px;
+}
+
+.list-item-details-row {
+  padding-right:16px;
+  padding-left: 16px;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
 .btn.btn-warning.mdi-navigation-arrow-drop-up.large-button {
   padding: 10px 10px;
   display: inline-block;
@@ -178,24 +192,44 @@ hr {
 }
 
 #edit-user-profile {
-/*  width: 60%;*/
-/*  float: right;*/
+}
+
+.user-details-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right:16px;
+  padding-left: 16px;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.user-details-left-contents {
+  display: inline-block;
 }
 
 .user-photo-container {
   display: inline-block;
-  position: absolute;
+}
+
+#user-info-row {
+  padding-left: 32px;
+  display: inline-block;
 }
 
 #user-info-container {
   display: inline-block;
-  padding-left: 45px;
-  padding-top: 6px;
 }
 
 #upvote-info-container {
   display: inline-block;
   padding-top: 6px;
+}
+
+.fb_iframe_widget {
+  margin-right: 10px;
 }
 
 #upvotes-number {
@@ -219,10 +253,6 @@ hr {
   display: inline-block;
 }
 
-.social-share-button {
-  margin-top: 12px;
-}
-
 .number-of-upvotes {
   margin-top: 17px;
 }
@@ -241,6 +271,11 @@ hr {
 
 .navbar-brand {
   transition-duration: 0.25s;
+}
+
+.container#brand-container {
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .theme-status {
@@ -445,25 +480,39 @@ ul.no-bullets {
 
 /*Comments*/
 
+.comments-container {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.comment-container {
+  align-items: flex-start;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  margin-top: 16px;
+}
+
 #comment-body {
   display: inline-block;
-  padding-left: 45px;
+  padding-left: 56px;
 }
 
 #comment-form {
   padding-top: 10px;
 }
 
-.list-group#comments {
-  margin: 0px 20px;
-}
-
-.list-group-item.comment {
-  padding: 10px 0px;
+#comment-count {
+  margin-bottom: 20px;
 }
 
 .replies {
   margin-left: 50px;
+}
+
+.replies #comment-body {
+  padding-left: 36px;
 }
 
 .child_replies {

@@ -14,15 +14,15 @@
       <% post.each do |post| %>
         <div class="list-item-row">
           <%= render partial: "posts/upvotes", locals: { post: post} %>
-          <div id="list-item-left-contents" data-link="<%= post_path(post) %>">
-            <div id="list-item-info">
-              <h4 id="list-item-heading">
+          <div class="list-item-left-contents" data-link="<%= post_path(post) %>">
+            <div class="list-item-info">
+              <h4 class="list-item-heading">
                 <a href="<%= post.url %>" target="_blank"><%= post.name %></a>
               </h4>
-              <p id="list-item-details"><%= post.description %></p>
+              <p class="list-item-details"><%= post.description %></p>
             </div>
           </div>
-          <div id="list-item-right-contents">
+          <div class="list-item-right-contents">
             <h5>
               <%= link_to post.name_of_user, user_path(post.user) %>
             </h5>
