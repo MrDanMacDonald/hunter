@@ -150,19 +150,29 @@ hr {
   padding-top: 10px;
 }
 
-.followers-list {
+.followers-container {
   padding-top: 20px;
-  columns: 3;
-  -webkit-columns: 3;
-  -moz-columns: 3;
+  padding-left: 16px;
+  align-items: stretch;
+  align-content: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
 }
 
-/*.followers-list-item {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}*/
+.follower-item {
+/*  background-color: red;*/
+}
 
-.followers-list-item:hover {
+.follower-details {
+  width: 200px;
+  display: inline-block;
+}
+
+.follower-item:hover {
   background-color: #f5f5f5;
 }
 
@@ -406,6 +416,10 @@ hr {
   color: #455A64 !important;
   padding-right: 50px;
   padding-left: 50px;
+}
+
+a#upvoted-posts {
+  padding-left: 16px;
 }
 
 .nav-tabs>li>a:hover {

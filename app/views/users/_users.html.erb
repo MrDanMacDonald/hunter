@@ -1,19 +1,15 @@
-<div class="list-group">
-  <ul class="followers-list">
-    <% users.each do |user| %>
-      <%= link_to user_path(user) do %>
-        <li class="followers-list-item">
-          <div class="list-group-item">
-            <div class="row-picture">
-              <%= image_tag user.photo, class: "user-photo-small" %>
-            </div>
-            <div class="row-content">
-              <h4 class="list-group-item-heading"><%= user.name %></h4>
-              <p class="list-group-item-text">Twitter Handle Placeholder</p>
-            </div>
-          </div>
-        </li>
-      <% end %>
+<ul class="followers-container">
+  <% users.each do |user| %>
+    <%= link_to user_path(user) do %>
+      <div class="follower-item">
+        <div class="user-photo-container">
+          <%= image_tag user.photo, class: "user-photo-small" %>
+        </div>
+        <div class="follower-details">
+          <h4 class="list-group-item-heading"><%= user.name %></h4>
+          <p class="list-group-item-text">Twitter Handle Placeholder</p>
+        </div>
+      </div>
     <% end %>
-  </ul>
-</div>
+  <% end %>
+</ul>
