@@ -52,7 +52,7 @@
 <!--   Comments -->
   <div class="comments-container">
     <h3 id="comment-count"><%= render 'comments/count', locals: { comment: @comment } %></h3>
-    <div>
+    <div id="comments-tree">
       <%= comments_tree_for @comments %>
     </div>
     <div class="row">

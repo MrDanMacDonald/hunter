@@ -241,7 +241,7 @@ hr {
 }
 
 .user-photo-small {
-  display: inline;
+  display: inline-block;
   border-radius: 100%;
   width: 30px;
   height: 30px;
@@ -494,9 +494,14 @@ ul.no-bullets {
   margin-top: 16px;
 }
 
+/*Workaround hack to fix flexbox bug*/
+div#comments-tree > *:nth-child(1) #comment-body {
+  padding-left: 37px;
+}
+
 #comment-body {
   display: inline-block;
-  padding-left: 22px;
+  padding-left: 32px;
 }
 
 #comment-form {
@@ -510,10 +515,6 @@ ul.no-bullets {
 .replies {
   margin-left: 50px;
 }
-
-/*.replies #comment-body {
-  padding-left: 36px;
-}*/
 
 .child_replies {
   margin-left: 0px;
