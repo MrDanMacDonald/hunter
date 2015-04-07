@@ -1,8 +1,32 @@
-<%if @users.length > 0 && @posts.length > 0%>
-  <%= render partial: "shared/users", locals: { users: @users } %>
-  <%= render partial: "shared/posts", locals: { posts: @posts } %>
+<% if @users.length > 0 && @posts.length > 0%>
+  <div class="row">
+    <h5 id='day-of-week'><%= @users.count %> users matched your search</h5>
+  </div>
+  <div class="well bs-component">
+    <%= render partial: "users/users", locals: { users: @users } %>
+  </div>
+  <div class="row">
+    <h5 id='day-of-week'><%= @posts.count %> posts matched your search</h5>
+  </div>
+  <div class="well bs-component">
+    <%= render partial: "shared/posts", locals: { posts: @posts } %>
+  </div>
 <% elsif @users.length > 0 %>
-  <%= render partial: "shared/users", locals: { users: @users } %>
+  <div class="row">
+    <h5 id='day-of-week'><%= @users.count %> users matched your search</h5>
+  </div>
+  <div class="well bs-component">
+    <%= render partial: "users/users", locals: { users: @users } %>
+  </div>
 <% elsif @posts.length > 0 %>
-  <%= render partial: "shared/posts", locals: { posts: @posts } %>
+  <div class="row">
+    <h5 id='day-of-week'><%= @posts.count %> posts matched your search</h5>
+  </div>
+  <div class="well bs-component">
+    <%= render partial: "shared/posts", locals: { posts: @posts } %>
+  </div>
+<% else %>
+  <div class="row">
+    <h5 id='day-of-week'>0 results matched your search</h5>
+  </div>
 <% end %>
