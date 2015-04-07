@@ -151,8 +151,8 @@ hr {
 }
 
 .followers-container {
-  padding-top: 20px;
-  padding-left: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   align-items: stretch;
   align-content: flex-start;
   justify-content: flex-start;
@@ -164,11 +164,21 @@ hr {
 }
 
 .follower-item {
-/*  background-color: red;*/
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  width: 310px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
 }
 
 .follower-details {
-  width: 200px;
   display: inline-block;
 }
 
@@ -226,6 +236,10 @@ hr {
 
 .user-photo-container {
   display: inline-block;
+}
+
+.user-photo-container-small {
+  padding-right: 16px;
 }
 
 #user-info-row {
