@@ -1,4 +1,4 @@
-<% posts_by_date.each do |date, post| %>
+<% posts_by_date.each do |date, posts| %>
     <div class="row">
       <div>
         <% if date == @todays_date %>
@@ -11,7 +11,7 @@
     </div>
 
     <div class="well bs-component">
-      <% post.each do |post| %>
+      <% posts.sort_by { |post| post.number_of_votes }.reverse.each do |post| %>
         <div class="list-item-row">
           <%= render partial: "posts/upvotes", locals: { post: post} %>
           <div class="list-item-left-contents" data-link="<%= post_path(post) %>">

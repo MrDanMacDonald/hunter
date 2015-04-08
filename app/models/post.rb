@@ -9,6 +9,11 @@ class Post < ActiveRecord::Base
   has_many :comments, as: :commentable
 
   require 'acts_as_votable'
+
+  def number_of_votes
+    votes_for.size
+  end
+
   def name_of_user
     user.name
   end

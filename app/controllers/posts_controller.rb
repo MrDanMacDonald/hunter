@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   respond_to :html, :js
 
   def index
-    @todays_posts = Post.where("created_at >= ?", Time.zone.now.beginning_of_day)
     @posts_by_date = Post.order('created_at DESC').all.group_by { |post| post.created_at.to_date }
     if logged_in?
       @post = current_user.posts.build
