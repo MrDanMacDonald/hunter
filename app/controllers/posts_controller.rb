@@ -5,11 +5,7 @@ class PostsController < ApplicationController
 
   def index
     @posts_by_date = Post.order('created_at DESC').all.group_by { |post| post.created_at.to_date }
-    if logged_in?
-      @post = current_user.posts.build
-    else
-      @post = Post.new
-    end
+    @post = current_user.posts.build
   end
 
   def upvote
@@ -39,6 +35,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @new_post = current_user.posts.build
     @commentable = @post
     @comments = @post.comments.hash_tree
     @comment = Comment.new
