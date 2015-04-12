@@ -1,34 +1,24 @@
-<table class="table table-hover">
-  <thead>
-    <th class="col-md-1" id="table-cell-1"></th>
-    <th class="col-md-9"></th>
-    <th class="col-md-2"></th>
-  </thead>
-  <tbody>
-    <% posts.each do |post| %>
-      <tr>
-        <td>
-          <%= render partial: "posts/upvotes", locals: { post: post} %>
-        </td>
-        <td data-link="<%= post_path(post) %>">
-          <div class="post-item-info">
-            <h4 class="list-group-item-heading">
-              <a href="<%= post.url %>" target="_blank"><%= post.name %></a>
-            </h4>
-            <p><%= post.description %></p>
-          </div>
-        </td>
-        <td>
-          <h5 class="post-item-info">
-            <%= link_to post.name_of_user, user_path(post.user) %>
-          </h5>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% posts.each do |post| %>
+  <div class="list-item-row">
+    <%= render partial: "posts/upvotes", locals: { post: post} %>
+    <div class="list-item-left-contents" data-link="<%= post_path(post) %>">
+      <div class="list-item-info">
+        <h4 class="list-item-heading">
+          <a href="<%= post.url %>" target="_blank"><%= post.name %></a>
+        </h4>
+        <p class="list-item-details"><%= post.description %></p>
+      </div>
+    </div>
+    <div class="list-item-right-contents">
+      <h5>
+        <%= link_to post.name_of_user, user_path(post.user) %>
+      </h5>
+    </div>
+  </div>
+  <hr></hr>
+  <% end %>
 <script type="text/javascript">
-  $("td[data-link]").click(function() {
+  $("div[data-link]").click(function() {
       window.location = this.dataset.link
   })
 </script>

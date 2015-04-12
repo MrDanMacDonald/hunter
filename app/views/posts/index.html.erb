@@ -1,22 +1,6 @@
-<div class="well bs-component">
-  <table class="table table-hover">
-      <thead>
-        <th class="col-md-1">
-          <h2 class="present-date">Today</h2>
-        </th>
-        <th class="col-md-10">
-          <h4 class="present-date" id="date">
-            <%= @date.strftime("%B #{@date.day.ordinalize}") %>
-          </h4>
-        </th>
-        <th class="col-md-1"></th>
-      </thead>
-      <tbody>
-        <%= render partial: "shared/posts", locals: { posts: @posts } %>
-      </tbody>
-  </table>
+<div>
+  <%= render partial: "posts/posts_by_date", locals: { posts_by_date: @posts_by_date } %>
 </div>
-
 <!-- Hidden Bootstrap Modal Markup -->
 <div class="modal fade" id="new-post-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -27,7 +11,7 @@
       </div>
       <div class="modal-body">
         <!-- Render the new post form form (passing modal: true to enable remote: true) -->
-        <%= render 'posts/form', modal: true %>
+        <%= render partial: 'posts/form', locals: { post: @post }, modal: true %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -35,7 +19,6 @@
     </div>
   </div>
 </div>
-
 <script type="text/javascript">
   $("tr[data-link]").click(function() {
       window.location = this.dataset.link

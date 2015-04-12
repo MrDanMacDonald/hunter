@@ -1,22 +1,81 @@
 /*Body*/
 
 body {
-  padding-top: 190px;
+  padding-top: 142px;
 }
 
 a:link {
   text-decoration:none;
 }
 
+.container {
+  max-width: 960px;
+}
+
+.well.bs-component {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+/*Lists*/
+
+.list-item-row {
+  padding-right:16px;
+  padding-left: 16px;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.list-item-row:hover{
+  background-color: #f5f5f5;
+}
+
+.list-item-left-contents {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.list-item-right-contents {
+  display: flex;
+  margin-left: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.list-item-info {
+  display: inline-block;
+  padding-left: 11px;
+}
+
+.list-item-heading {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.list-item-details {
+  margin-bottom: 0px;
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 /*Upvote button on posts#INDEX */
 
 .btn.btn-warning.mdi-navigation-arrow-drop-up {
-  padding: 1px 1px;
+  padding: 0px 0px;
   display: inline-block;
+  margin-right: 0px 0px;
 }
 
 .mdi-navigation-arrow-drop-up::before {
-  font-size: 3em;
+  font-size: 2em;
 }
 
 /*Table header*/
@@ -28,8 +87,31 @@ a:link {
   width: 5%;
 }
 
-.present-date {
-  display: inline;
+#present-date {
+  display: inline-block;
+  border-top: 1px;
+  margin-top: 20px;
+  margin-right: 8px;
+  padding-left: 31px;
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+  border-bottom: 1px;
+}
+
+#day-of-week {
+  display: inline-block;
+  margin-top: 20px;
+  border-top: 1px;
+  padding-left: 31px;
+  padding-bottom: 10px;
+  border-bottom: 1px;
+  margin-bottom: 0px;
+  color: #7e7e7e;
+}
+
+#month-ordinalized {
+  display: inline-block;
+  color: #7e7e7e;
 }
 
 #date {
@@ -64,23 +146,61 @@ a:link {
 
 /*user profile*/
 
-.followers-list {
-  padding-top: 20px;
-  columns: 3;
-  -webkit-columns: 3;
-  -moz-columns: 3;
+.list-group#user-profile {
+  padding-top: 10px;
 }
 
-/*.followers-list-item {
+.followers-container {
   padding-top: 10px;
   padding-bottom: 10px;
-}*/
+  align-items: stretch;
+  align-content: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
 
-.followers-list-item:hover {
+.follower-item {
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  width: 310px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+}
+
+.follower-details {
+  display: inline-block;
+}
+
+.follower-item:hover {
   background-color: #f5f5f5;
 }
 
 /*posts#SHOW */
+
+.well.bs-component.show {
+  margin-top: 45px;
+}
+
+.list-item-details-row {
+  padding-right:16px;
+  padding-left: 16px;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
 
 .btn.btn-warning.mdi-navigation-arrow-drop-up.large-button {
   padding: 10px 10px;
@@ -96,19 +216,39 @@ a:link {
 }
 
 #edit-user-profile {
-/*  width: 60%;*/
-/*  float: right;*/
+}
+
+.user-details-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right:16px;
+  padding-left: 16px;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.user-details-left-contents {
+  display: inline-block;
 }
 
 .user-photo-container {
   display: inline-block;
-  position: absolute;
+}
+
+.user-photo-container-small {
+  padding-right: 16px;
+}
+
+#user-info-row {
+  padding-left: 32px;
+  display: inline-block;
 }
 
 #user-info-container {
   display: inline-block;
-  padding-left: 45px;
-  padding-top: 6px;
 }
 
 #upvote-info-container {
@@ -116,12 +256,16 @@ a:link {
   padding-top: 6px;
 }
 
+.fb_iframe_widget {
+  margin-right: 10px;
+}
+
 #upvotes-number {
   margin-bottom: 8px;
 }
 
 .user-photo-small {
-  display: inline;
+  display: inline-block;
   border-radius: 100%;
   width: 30px;
   height: 30px;
@@ -135,10 +279,6 @@ a:link {
 
 .user-name {
   display: inline-block;
-}
-
-.social-share-button {
-  margin-top: 12px;
 }
 
 .number-of-upvotes {
@@ -161,6 +301,11 @@ a:link {
   transition-duration: 0.25s;
 }
 
+.container#brand-container {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
 .theme-status {
   background-color: #455A64;
   height: 25px;
@@ -176,10 +321,6 @@ a:link {
   font-size: 24px;
   padding: 15px;
 }
-
-/*#search-bar {
-  padding-top: 4px;
-}*/
 
 #search-text {
   color: #ffffff;
@@ -291,6 +432,10 @@ a:link {
   padding-left: 50px;
 }
 
+a#upvoted-posts {
+  padding-left: 16px;
+}
+
 .nav-tabs>li>a:hover {
   color: #455A64 !important;
 }
@@ -363,21 +508,36 @@ ul.no-bullets {
 
 /*Comments*/
 
+.comments-container {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.comment-container {
+  align-items: flex-start;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  margin-top: 16px;
+}
+
+/*Workaround hack to fix flexbox bug*/
+div#comments-tree > *:nth-child(1) #comment-body {
+  padding-left: 37px;
+}
+
 #comment-body {
   display: inline-block;
-  padding-left: 45px;
+  padding-left: 32px;
 }
 
 #comment-form {
   padding-top: 10px;
 }
 
-.list-group#comments {
-  margin: 0px 20px;
-}
-
-.list-group-item.comment {
-  padding: 10px 0px;
+#comment-count {
+  margin-bottom: 20px;
 }
 
 .replies {
