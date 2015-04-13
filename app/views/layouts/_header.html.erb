@@ -1,6 +1,6 @@
 <div class='navbar navbar-default navbar-fixed-top'>
-    <div class='theme-status'>
-    </div>
+<!--     <div class='theme-status'>
+    </div> -->
   <div class='container' id='brand-container'>
     <div class='navbar-header'>
       <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-responsive-collapse'>
@@ -21,7 +21,7 @@
         <% if logged_in? %>
           <li class="dropdown">
             <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">
-              <%= image_tag @post.user_photo, class: "user-photo-small" %>
+              <%= image_tag current_user.photo, class: "user-photo-small" %>
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
@@ -47,10 +47,10 @@
     $(document).scroll(function() {
         scroll_pos = $(this).scrollTop();
         console.log('scroll_pos: ', scroll_pos)
-        if(scroll_pos > 22) {
-          $("#fab-container, .navbar, .navbar-brand, .navbar-right, .navbar-left, .btn-fab").addClass('pastNavbarBottom');
+        if(scroll_pos > 45) {
+          $(".navbar, .navbar-brand, .navbar-right, .navbar-left, .btn-fab").addClass('pastNavbarBottom');
         } else {
-          $("#fab-container, .navbar, .navbar-brand, .navbar-right, .navbar-left, .btn-fab").removeClass('pastNavbarBottom');
+          $(".navbar, .navbar-brand, .navbar-right, .navbar-left, .btn-fab").removeClass('pastNavbarBottom');
         }
     });
   });
