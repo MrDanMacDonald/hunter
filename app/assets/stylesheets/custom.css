@@ -1,7 +1,7 @@
 /*Body*/
 
 body {
-  padding-top: 142px;
+  padding-top: 65px;
 }
 
 a:link {
@@ -315,66 +315,57 @@ hr {
   background-color: #607D8B;
 }
 
+/*Dropdown user photo*/
+.navbar .navbar-nav>li>a {
+  padding-top: 15px;
+  padding-bottom: 15px.
+}
 /* Search form */
 
 #search {
   font-size: 24px;
-  padding: 15px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-right: 0px;
+  padding-left: 15px;
 }
 
-#search-text {
-  color: #ffffff;
-  border-color: #ffffff;
-}
-
-#search-text::-webkit-input-placeholder { /* WebKit browsers */
-  color: #ffffff;
-}
-#search-text:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color: #ffffff;
-  opacity: 1;
-}
-#search-text::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color: #ffffff;
-  opacity: 1;
-}
-#search-text:-ms-input-placeholder { /* Internet Explorer 10+ */
-  color: #ffffff;
-}
-
-/*.form-control#search-text:focus {
-  border-bottom: 2px solid #E91E63;
+/*.form-control::after:focus {
+  outline: none;
+  background-image: linear-gradient(#009688,#009688),linear-gradient(#d2d2d2,#d2d2d2);
+  -webkit-animation: input-highlight .5s forwards;
+  animation: input-highlight .5s forwards;
+  box-shadow: none;
+  background-size: 0 2px,100% 1px;
 }*/
-
-#search-field {
-  padding-top: 7px;
-}
 
 /*On scroll*/
 
-.pastNavbarBottom#fab-container {
-  height: 0px;
-}
-
-.pastNavbarBottom#menu-right {
+/*.pastNavbarBottom#menu-right {
   right: 50px;
-}
+}*/
 
 /*.pastNavbarBottom.navbar-brand {
-  color: red;
+  color: #7e7e7e;
 }
 
 .pastNavbarBottom.nav.navbar-nav.navbar-right>li>a {
-  color: red;
+  color: #7e7e7e;
 }
 
 .pastNavbarBottom.nav.navbar-nav.navbar-left>li>a {
-  color: red;
+  color: #7e7e7e;
+}
+*/
+/*.pastNavbarBottom.navbar {
+  box-shadow: 0 2px 5px #9E9E9E;
+  background-color: #E0E0E0;
 }*/
 
 .pastNavbarBottom.navbar {
   box-shadow: 0 2px 5px #9E9E9E;
 }
+
 .pastNavbarBottom.btn.btn-warning.btn-fab.btn-raised.mdi-content-add {
   -webkit-transform:rotate(360deg);
   -moz-transform:rotate(360deg);
@@ -387,14 +378,16 @@ hr {
 }
 
 #fab-container {
+  height: 0px;
   position: relative;
-  height: 60px;
+  background-color: #EEEEEE;
+  max-width: 1086px;
 }
 
 #add-post {
   position: absolute;
   right: 0;
-  bottom: -26px;
+  bottom: -100px;
 
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;

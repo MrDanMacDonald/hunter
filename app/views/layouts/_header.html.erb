@@ -1,6 +1,6 @@
 <div class='navbar navbar-default navbar-fixed-top'>
-    <div class='theme-status'>
-    </div>
+<!--     <div class='theme-status'>
+    </div> -->
   <div class='container' id='brand-container'>
     <div class='navbar-header'>
       <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-responsive-collapse'>
@@ -19,8 +19,17 @@
         </li>
         <li id='search-bar'></li>
         <% if logged_in? %>
-          <li><%= link_to 'Profile', current_user %></li>
-          <li><%= link_to 'Log out', logout_path %></li>
+          <li class="dropdown">
+            <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= image_tag current_user.photo, class: "user-photo-small" %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li><%= link_to 'Profile', current_user %></li>
+                <li><%= link_to 'Settings', edit_user_path(current_user) %></li>
+                <li><%= link_to 'Log out', logout_path %></li>
+            </ul>
+            </li>
         <% else %>
           <li><%= link_to 'Sign in with Twitter', "/auth/twitter" %></li>
         <% end %>
@@ -38,10 +47,10 @@
     $(document).scroll(function() {
         scroll_pos = $(this).scrollTop();
         console.log('scroll_pos: ', scroll_pos)
-        if(scroll_pos > 22) {
-          $("#fab-container, .navbar, .navbar-brand, .navbar-right, .navbar-left, .btn-fab").addClass('pastNavbarBottom');
+        if(scroll_pos > 45) {
+          $(".navbar, .navbar-brand, .navbar-right, .navbar-left, .btn-fab").addClass('pastNavbarBottom');
         } else {
-          $("#fab-container, .navbar, .navbar-brand, .navbar-right, .navbar-left, .btn-fab").removeClass('pastNavbarBottom');
+          $(".navbar, .navbar-brand, .navbar-right, .navbar-left, .btn-fab").removeClass('pastNavbarBottom');
         }
     });
   });
