@@ -1,6 +1,6 @@
 # TODO: Move keys into a YML file
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :twitter, 'x6VTZfo3rJPUUVwJr9Sp7Wc7E', 'Uj4b8SZ4Zvze9s2tmsYOvODavYUpjU3alQIZaokwZia4MOGvSX',
+  provider :twitter, Rails.application.secrets.twitter_api_key, Rails.application.secrets.twitter_api_secret,
   {
     image_size: 'original',
     authorize_params: {
