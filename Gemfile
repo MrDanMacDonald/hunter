@@ -52,3 +52,8 @@ group :development, :test do
   gem 'terminal-notifier-guard'
   gem 'awesome_print'
 end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
