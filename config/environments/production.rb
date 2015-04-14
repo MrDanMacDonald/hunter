@@ -4,6 +4,14 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
+  # Set secret key using environment variable
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
+
+  # Set twitter api key using environment variable
+  config.twitter_api_key = ENV["TWITTER_API_KEY"]
+
+  # Set twitter api secret using environment variable
+  config.twitter_api_secret = ENV["TWITTER_API_SECRET"]
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.

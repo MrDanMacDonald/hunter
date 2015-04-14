@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def index
     @posts_by_date = Post.order('created_at DESC').all.group_by { |post| post.created_at.to_date }
-    @post = current_user.posts.build
+    current_user ? @post = current_user.posts.build : @post = Post.new
   end
 
   def upvote
