@@ -20,7 +20,6 @@ gem 'draper'
 gem 'shareable'
 gem 'bcrypt'
 gem 'closure_tree'
-gem 'omniauth-twitter'
 gem 'ransack'
 
 group :development do
@@ -54,6 +53,6 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
+  gem 'omniauth-twitter'
   gem 'rails_12factor'
 end
