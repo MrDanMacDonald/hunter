@@ -20,8 +20,8 @@ gem 'draper'
 gem 'shareable'
 gem 'bcrypt'
 gem 'closure_tree'
-gem 'omniauth-twitter'
 gem 'ransack'
+gem 'omniauth-twitter'
 
 group :development do
   gem 'better_errors'
