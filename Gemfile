@@ -22,6 +22,7 @@ gem 'bcrypt'
 gem 'closure_tree'
 gem 'ransack'
 gem 'omniauth-twitter'
+gem 'figaro'
 
 group :development do
   gem 'better_errors'
