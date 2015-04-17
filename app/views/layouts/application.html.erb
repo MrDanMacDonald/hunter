@@ -13,6 +13,10 @@
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>" id="flash"><%= message %></div>
     <% end %>
+    <h2>Current User</h2>
+    <%= current_user.inspect %>
+    <h2>Session Info</h2>
+    <%= session.inspect %>
     <%= yield %>
   </div>
 </body>
