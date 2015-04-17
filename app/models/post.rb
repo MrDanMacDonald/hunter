@@ -15,10 +15,12 @@ class Post < ActiveRecord::Base
   end
 
   def name_of_user
+    return unless user
     user.name
   end
 
   def user_photo
+    return unless user
     user.photo.to_s
   end
 

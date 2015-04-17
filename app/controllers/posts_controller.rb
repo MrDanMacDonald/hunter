@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create, :upvote, :destroy]
+  before_action :logged_in_user, only: [:create, :upvote, :destroy]
   before_action :set_date_and_posts
   respond_to :html, :js
 
@@ -35,10 +35,10 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @new_post = current_user.posts.build
     @commentable = @post
     @comments = @post.comments.hash_tree
     @comment = Comment.new
+    current_user ? @new_post = current_user.posts.build : @new_post = Post.new
   end
 
   private
