@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :upvote, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy]
   before_action :set_date_and_posts
   respond_to :html, :js
 
@@ -9,16 +9,21 @@ class PostsController < ApplicationController
   end
 
   def upvote
-    @post = Post.find(params[:id])
-    respond_to do |format|
-      unless current_user.voted_for? @post
-        format.html { redirect_to(@post) }
-        format.js
-        @post.upvote_by current_user
-      else
-        format.html { redirect_to(@posts) }
-        format.js
+    if logged_in?
+      @post = Post.find(params[:id])
+      respond_to do |format|
+        unless current_user.voted_for? @post
+          format.html { redirect_to(@post) }
+          format.js
+          @post.upvote_by current_user
+        else
+          format.html { redirect_to(@posts) }
+          format.js
+        end
       end
+    else
+      flash[:danger] = 'Please sign in to do that!'
+      render :js => "window.location = '/posts'"
     end
   end
 
