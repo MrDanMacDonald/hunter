@@ -387,7 +387,7 @@ hr {
 #add-post {
   position: absolute;
   right: 0;
-  bottom: -100px;
+  bottom: -105px;
 
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
