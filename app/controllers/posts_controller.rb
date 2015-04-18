@@ -22,7 +22,7 @@ class PostsController < ApplicationController
         end
       end
     else
-      flash[:danger] = 'Please sign in to do that!'
+      flash[:danger] = 'Please sign in to upvote!'
       render :js => "window.location = '/posts'"
     end
   end
