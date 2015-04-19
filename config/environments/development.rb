@@ -6,6 +6,15 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  # Set secret key using environment variable
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
+
+  # Set twitter api key using environment variable
+  config.twitter_api_key = ENV["TWITTER_API_KEY"]
+
+  # Set twitter api secret using environment variable
+  config.twitter_api_secret = ENV["TWITTER_API_SECRET"]
+
   # Do not eager load code on boot.
   config.eager_load = false
 
