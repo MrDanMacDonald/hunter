@@ -23,9 +23,7 @@
             </div>
           </div>
           <div class="list-item-right-contents">
-            <h5>
-              <%= link_to post.name_of_user, user_path(post.user) %>
-            </h5>
+            <%= link_to(image_tag(post.user_photo, class: "user-photo-small"), user_path(post.user)) %>
           </div>
         </div>
         <hr></hr>

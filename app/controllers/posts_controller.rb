@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def upvote
     if logged_in?
-      @post = Post.find(params[:id])
+      @post = Post.find(params[:post_id])
       respond_to do |format|
         unless current_user.voted_for? @post
           format.html { redirect_to(@post) }
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
         end
       end
     else
-      flash[:danger] = 'Please sign in to do that!'
+      flash[:danger] = 'Please sign in to upvote!'
       render :js => "window.location = '/posts'"
     end
   end
