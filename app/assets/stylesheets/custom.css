@@ -341,6 +341,12 @@ hr {
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
+/*Twitter Sign In*/
+
+#twitter-sign-in {
+  padding-top: 21px;
+}
 /* Search form */
 
 #search {
