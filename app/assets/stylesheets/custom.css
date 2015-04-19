@@ -20,6 +20,10 @@ a:link {
   margin-bottom: 0px;
 }
 
+.secondary-text {
+  color: #7e7e7e;
+}
+
 /*Lists*/
 
 .list-item-row {
@@ -90,7 +94,7 @@ hr {
 #present-date {
   display: inline-block;
   border-top: 1px;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-right: 8px;
   padding-left: 31px;
   padding-bottom: 10px;
@@ -142,6 +146,23 @@ hr {
 
 .list-group .list-group-item .row-content {
   display: inline;
+}
+
+.secondary-text > a {
+  text-decoration: none;
+  color: #7e7e7e;
+}
+
+.profile-info {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.button-right {
+  float: right;
 }
 
 /*user profile*/
