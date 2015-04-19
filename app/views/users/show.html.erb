@@ -12,7 +12,8 @@
         </div>
         <div class="col-md-4">
           <h2><%= @user.name %></h2>
-          <h4><%= @user.email %></h4>
+          <h4><%= @user.decorate.display_twitter_handle %></h4>
+          <h4><%= @user.website_display_url %></h4>
           <% if current_user %>
             <%= render "follow_or_unfollow" %>
           <% end %>
