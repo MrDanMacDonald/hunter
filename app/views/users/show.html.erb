@@ -13,7 +13,9 @@
         <div class="col-md-4">
           <h2><%= @user.name %></h2>
           <h4><%= @user.email %></h4>
-          <%= render "follow_or_unfollow" %>
+          <% if current_user %>
+            <%= render "follow_or_unfollow" %>
+          <% end %>
         </div>
         <div class="col-md-6">
         </div>
@@ -66,4 +68,3 @@
     </div>
   </div>
 </div>
-

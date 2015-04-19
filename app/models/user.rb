@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false },
                     allow_blank: true
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
   has_many :comments
   has_many :active_relationships, class_name: "Relationship",
                                   foreign_key: "follower_id",
@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
 
   def self.create_with_omniauth(auth)
     create! do |user|
+      user.twitter_handle = auth['info']['nickname']
+      user.twitter_profile_url = auth['info']['urls']['Twitter']
+      user.website = auth['extra']['raw_info']['entities']['url']['urls'][0]['expanded_url']
+      user.website_display_url =  auth['extra']['raw_info']['entities']['url']['urls'][0]['display_url']
       user.provider = auth['provider']
       user.uid = auth['uid']
       user.name = auth['info']['name']
