@@ -1,7 +1,7 @@
 <div class="well bs-component show">
   <div class="list-group" id="user-profile">
     <div class="list-group-item">
-      <div class="row">
+      <div class="row profile-info">
         <div class="row-picture col-md-2">
           <!-- TODO: Add a placeholder avatar -->
           <div class="profile-photo">
@@ -10,19 +10,19 @@
             <% end %>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-5">
           <h2><%= @user.name %></h2>
-          <h4>
+          <h4 class="secondary-text">
             <a href="<%= @user.twitter_profile_url %>" target="_blank"><%= @user.decorate.display_twitter_handle %></a>
           </h4>
-          <h4>
+          <h4 class="secondary-text">
             <a href="<%= @user.website %>" target="_blank"><%= @user.website_display_url %></a>
           </h4>
+        </div>
+        <div class="col-md-5">
           <% if current_user %>
             <%= render "follow_or_unfollow" %>
           <% end %>
-        </div>
-        <div class="col-md-6">
         </div>
       </div>
     </div>
