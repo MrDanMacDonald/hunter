@@ -12,8 +12,12 @@
         </div>
         <div class="col-md-4">
           <h2><%= @user.name %></h2>
-          <h4><%= @user.decorate.display_twitter_handle %></h4>
-          <h4><%= @user.website_display_url %></h4>
+          <h4>
+            <a href="<%= @user.twitter_profile_url %>" target="_blank"><%= @user.decorate.display_twitter_handle %></a>
+          </h4>
+          <h4>
+            <a href="<%= @user.website %>" target="_blank"><%= @user.website_display_url %></a>
+          </h4>
           <% if current_user %>
             <%= render "follow_or_unfollow" %>
           <% end %>
